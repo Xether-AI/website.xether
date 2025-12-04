@@ -12,14 +12,16 @@ export default function APIPage() {
           </p>
         </section>
 
-        <section className="px-6 py-16 border-t border-black">
+        <section className="px-6 py-16 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="border border-black p-8">
+              <div className="border border-[var(--border)] p-8 bg-[#020617]/70 rounded-xl">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-2xl font-bold">AI Backend</h3>
-                  <span className="text-xs px-3 py-1 bg-black text-white">Port 8000</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-[#020617] border border-[var(--border)]">
+                    Port 8000
+                  </span>
                 </div>
                 <p className="text-[var(--muted)] mb-6">Data processing, pipeline execution, job monitoring.</p>
                 <div className="space-y-3 mb-6">
@@ -41,10 +43,12 @@ export default function APIPage() {
                 </Button>
               </div>
 
-              <div className="border border-black p-8">
+              <div className="border border-[var(--border)] p-8 bg-[#020617]/70 rounded-xl">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-2xl font-bold">RAG Service</h3>
-                  <span className="text-xs px-3 py-1 bg-black text-white">Port 8001</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-[#020617] border border-[var(--border)]">
+                    Port 8001
+                  </span>
                 </div>
                 <p className="text-[var(--muted)] mb-6">Document indexing, semantic search, AI-powered Q&A.</p>
                 <div className="space-y-3 mb-6">
@@ -69,12 +73,12 @@ export default function APIPage() {
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-black bg-black text-white">
+        <section className="px-6 py-16 border-t border-[var(--border)] bg-[#020617] text-[var(--fg)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Authentication</h2>
             <div className="max-w-3xl">
               <p className="mb-6">JWT-based authentication. Include token in Authorization header.</p>
-              <pre className="bg-white text-black p-6 overflow-x-auto text-sm mb-6">
+              <pre className="bg-[#020617] text-[var(--fg)] border border-[var(--border)] rounded-lg p-6 overflow-x-auto text-sm mb-6">
 {`POST /api/v1/auth/login
 Content-Type: application/json
 
@@ -90,21 +94,21 @@ Response:
 }`}
               </pre>
               <p className="text-sm">Use the access token in subsequent requests:</p>
-              <pre className="bg-white text-black p-6 overflow-x-auto text-sm mt-4">
+              <pre className="bg-[#020617] text-[var(--fg)] border border-[var(--border)] rounded-lg p-6 overflow-x-auto text-sm mt-4">
 {`Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`}
               </pre>
             </div>
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-black">
+        <section className="px-6 py-16 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Common Endpoints</h2>
             
             <div className="space-y-8">
-              <div className="border-l-4 border-black pl-6">
+              <div className="border-l-4 border-[var(--accent)] pl-6">
                 <h3 className="text-2xl font-bold mb-2">Upload Dataset</h3>
-                <pre className="bg-black text-white p-6 overflow-x-auto text-sm mt-4">
+                <pre className="bg-[#020617] text-[var(--fg)] border border-[var(--border)] rounded-lg p-6 overflow-x-auto text-sm mt-4">
 {`POST /api/v1/datasets/upload
 Content-Type: multipart/form-data
 Authorization: Bearer <token>
@@ -121,9 +125,9 @@ Response:
                 </pre>
               </div>
 
-              <div className="border-l-4 border-black pl-6">
+              <div className="border-l-4 border-[var(--accent)] pl-6">
                 <h3 className="text-2xl font-bold mb-2">Execute Pipeline</h3>
-                <pre className="bg-black text-white p-6 overflow-x-auto text-sm mt-4">
+                <pre className="bg-[#020617] text-[var(--fg)] border border-[var(--border)] rounded-lg p-6 overflow-x-auto text-sm mt-4">
 {`POST /api/v1/pipelines/execute
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -141,9 +145,9 @@ Response:
                 </pre>
               </div>
 
-              <div className="border-l-4 border-black pl-6">
+              <div className="border-l-4 border-[var(--accent)] pl-6">
                 <h3 className="text-2xl font-bold mb-2">Upload Document</h3>
-                <pre className="bg-black text-white p-6 overflow-x-auto text-sm mt-4">
+                <pre className="bg-[#020617] text-[var(--fg)] border border-[var(--border)] rounded-lg p-6 overflow-x-auto text-sm mt-4">
 {`POST /api/v1/documents/upload
 Content-Type: multipart/form-data
 Authorization: Bearer <token>
@@ -159,9 +163,9 @@ Response:
                 </pre>
               </div>
 
-              <div className="border-l-4 border-black pl-6">
+              <div className="border-l-4 border-[var(--accent)] pl-6">
                 <h3 className="text-2xl font-bold mb-2">Query Documents</h3>
-                <pre className="bg-black text-white p-6 overflow-x-auto text-sm mt-4">
+                <pre className="bg-[#020617] text-[var(--fg)] border border-[var(--border)] rounded-lg p-6 overflow-x-auto text-sm mt-4">
 {`POST /api/v1/queries
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -188,39 +192,39 @@ Response:
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-black">
+        <section className="px-6 py-16 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Response Codes</h2>
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b-2 border-black">
+                <tr className="border-b-2 border-[var(--border)]">
                   <th className="text-left py-4 font-bold">Code</th>
                   <th className="text-left py-4 font-bold">Status</th>
                   <th className="text-left py-4 font-bold">Description</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-black">
+                <tr className="border-b border-[var(--border)]">
                   <td className="py-4 font-mono">200</td>
                   <td className="py-4">OK</td>
                   <td className="py-4 text-[var(--muted)]">Request successful</td>
                 </tr>
-                <tr className="border-b border-black">
+                <tr className="border-b border-[var(--border)]">
                   <td className="py-4 font-mono">201</td>
                   <td className="py-4">Created</td>
                   <td className="py-4 text-[var(--muted)]">Resource created</td>
                 </tr>
-                <tr className="border-b border-black">
+                <tr className="border-b border-[var(--border)]">
                   <td className="py-4 font-mono">400</td>
                   <td className="py-4">Bad Request</td>
                   <td className="py-4 text-[var(--muted)]">Invalid input</td>
                 </tr>
-                <tr className="border-b border-black">
+                <tr className="border-b border-[var(--border)]">
                   <td className="py-4 font-mono">401</td>
                   <td className="py-4">Unauthorized</td>
                   <td className="py-4 text-[var(--muted)]">Authentication required</td>
                 </tr>
-                <tr className="border-b border-black">
+                <tr className="border-b border-[var(--border)]">
                   <td className="py-4 font-mono">404</td>
                   <td className="py-4">Not Found</td>
                   <td className="py-4 text-[var(--muted)]">Resource not found</td>
@@ -240,7 +244,7 @@ Response:
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-black bg-black text-white">
+        <section className="px-6 py-16 border-t border-[var(--border)] bg-[#020617] text-[var(--fg)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Rate Limits</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

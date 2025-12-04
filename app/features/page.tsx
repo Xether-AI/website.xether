@@ -13,10 +13,10 @@ export default function FeaturesPage() {
           </p>
         </section>
 
-        <section className="px-6 py-16 border-t border-black">
+        <section className="px-6 py-16 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Data Processing</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--border)]">
               <Card
                 title="Upload"
                 description="Drag and drop CSV, XLSX, JSON, Parquet files. Up to 500MB. Instant validation."
@@ -51,7 +51,7 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-black bg-black text-white">
+        <section className="px-6 py-16 border-t border-[var(--border)] bg-[#020617] text-[var(--fg)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Document Search</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -81,23 +81,23 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-black">
+        <section className="px-6 py-16 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Automation</h2>
             <div className="space-y-8 max-w-3xl">
-              <div className="border-l-4 border-black pl-6">
+              <div className="border-l-4 border-[var(--accent)] pl-6">
                 <h3 className="text-2xl font-bold mb-2">Pipeline Orchestration</h3>
                 <p className="text-[var(--muted)]">Configure multi-step workflows. Automatic execution. Error handling. Retry logic.</p>
               </div>
-              <div className="border-l-4 border-black pl-6">
+              <div className="border-l-4 border-[var(--accent)] pl-6">
                 <h3 className="text-2xl font-bold mb-2">RAG Integration</h3>
                 <p className="text-[var(--muted)]">Cleaned data automatically indexed. Zero manual steps. Instant searchability.</p>
               </div>
-              <div className="border-l-4 border-black pl-6">
+              <div className="border-l-4 border-[var(--accent)] pl-6">
                 <h3 className="text-2xl font-bold mb-2">Notifications</h3>
                 <p className="text-[var(--muted)]">Real-time alerts. Job completion. Error notifications. Status updates.</p>
               </div>
-              <div className="border-l-4 border-black pl-6">
+              <div className="border-l-4 border-[var(--accent)] pl-6">
                 <h3 className="text-2xl font-bold mb-2">Background Processing</h3>
                 <p className="text-[var(--muted)]">Celery workers. Redis queue. Async operations. Scalable architecture.</p>
               </div>
@@ -105,11 +105,11 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-black">
+        <section className="px-6 py-16 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Architecture</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="border border-black p-8">
+              <div className="border border-[var(--border)] p-8 bg-[#020617]/70 rounded-xl">
                 <h3 className="text-2xl font-bold mb-4">Backend</h3>
                 <ul className="space-y-2 text-sm">
                   <li>• FastAPI framework</li>
@@ -120,7 +120,7 @@ export default function FeaturesPage() {
                   <li>• JWT authentication</li>
                 </ul>
               </div>
-              <div className="border border-black p-8">
+              <div className="border border-[var(--border)] p-8 bg-[#020617]/70 rounded-xl">
                 <h3 className="text-2xl font-bold mb-4">Frontend</h3>
                 <ul className="space-y-2 text-sm">
                   <li>• React 19</li>
@@ -131,7 +131,7 @@ export default function FeaturesPage() {
                   <li>• Responsive design</li>
                 </ul>
               </div>
-              <div className="border border-black p-8">
+              <div className="border border-[var(--border)] p-8 bg-[#020617]/70 rounded-xl">
                 <h3 className="text-2xl font-bold mb-4">RAG Service</h3>
                 <ul className="space-y-2 text-sm">
                   <li>• ChromaDB / Qdrant</li>
@@ -142,7 +142,7 @@ export default function FeaturesPage() {
                   <li>• Semantic search</li>
                 </ul>
               </div>
-              <div className="border border-black p-8">
+              <div className="border border-[var(--border)] p-8 bg-[#020617]/70 rounded-xl">
                 <h3 className="text-2xl font-bold mb-4">Deployment</h3>
                 <ul className="space-y-2 text-sm">
                   <li>• Docker containers</li>
@@ -157,7 +157,7 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-black bg-black text-white">
+        <section className="px-6 py-16 border-t border-[var(--border)] bg-[#020617] text-[var(--fg)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Security</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -192,7 +192,7 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        <section className="px-6 py-24 border-t border-black">
+        <section className="px-6 py-24 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-5xl font-bold mb-8">Ready to start?</h2>
             <p className="text-xl text-[var(--muted)] mb-12 max-w-2xl mx-auto">
