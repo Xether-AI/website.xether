@@ -1,4 +1,11 @@
 import { ReactNode } from "react";
+import {
+  Card as UiCard,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
 
 interface CardProps {
   title: string;
@@ -9,10 +16,12 @@ interface CardProps {
 
 export function Card({ title, description, children, className = "" }: CardProps) {
   return (
-    <div className={`bg-white p-8 ${className}`}>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-sm text-[var(--muted)] mb-4">{description}</p>
-      {children}
-    </div>
+    <UiCard className={className}>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+      {children && <CardContent>{children}</CardContent>}
+    </UiCard>
   );
 }
