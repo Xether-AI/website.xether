@@ -1,19 +1,10 @@
 import Link from "next/link";
+import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
 
 export default function FeaturesPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="border-b border-black px-6 py-4">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tight">XETHER</Link>
-          <div className="flex gap-8 text-sm">
-            <Link href="/features" className="hover:underline">Features</Link>
-            <Link href="/docs" className="hover:underline">Docs</Link>
-            <Link href="http://localhost:5173" className="px-4 py-2 bg-black text-white hover:bg-[var(--accent)] transition-colors">Launch App</Link>
-          </div>
-        </nav>
-      </header>
-
+    <div className="flex flex-col">
       <main className="flex-1">
         <section className="px-6 py-24 max-w-7xl mx-auto">
           <h1 className="text-7xl font-bold mb-8 tracking-tight">Features</h1>
@@ -26,30 +17,36 @@ export default function FeaturesPage() {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">Data Processing</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black">
-              <div className="bg-white p-8">
-                <h3 className="text-xl font-bold mb-3">Upload</h3>
-                <p className="text-sm text-[var(--muted)]">Drag and drop CSV, XLSX, JSON, Parquet files. Up to 500MB. Instant validation.</p>
-              </div>
-              <div className="bg-white p-8">
-                <h3 className="text-xl font-bold mb-3">Clean</h3>
-                <p className="text-sm text-[var(--muted)]">Remove duplicates, handle missing values, detect outliers, normalize data.</p>
-              </div>
-              <div className="bg-white p-8">
-                <h3 className="text-xl font-bold mb-3">Transform</h3>
-                <p className="text-sm text-[var(--muted)]">Encode categories, convert types, standardize formats, apply custom rules.</p>
-              </div>
-              <div className="bg-white p-8">
-                <h3 className="text-xl font-bold mb-3">Monitor</h3>
-                <p className="text-sm text-[var(--muted)]">Real-time progress tracking. Job status updates. Error reporting.</p>
-              </div>
-              <div className="bg-white p-8">
-                <h3 className="text-xl font-bold mb-3">Report</h3>
-                <p className="text-sm text-[var(--muted)]">Quality scores, statistics, transformation logs, before/after comparisons.</p>
-              </div>
-              <div className="bg-white p-8">
-                <h3 className="text-xl font-bold mb-3">Export</h3>
-                <p className="text-sm text-[var(--muted)]">Download cleaned data. Multiple formats. Automatic RAG integration.</p>
-              </div>
+              <Card
+                title="Upload"
+                description="Drag and drop CSV, XLSX, JSON, Parquet files. Up to 500MB. Instant validation."
+                className="p-8"
+              />
+              <Card
+                title="Clean"
+                description="Remove duplicates, handle missing values, detect outliers, normalize data."
+                className="p-8"
+              />
+              <Card
+                title="Transform"
+                description="Encode categories, convert types, standardize formats, apply custom rules."
+                className="p-8"
+              />
+              <Card
+                title="Monitor"
+                description="Real-time progress tracking. Job status updates. Error reporting."
+                className="p-8"
+              />
+              <Card
+                title="Report"
+                description="Quality scores, statistics, transformation logs, before/after comparisons."
+                className="p-8"
+              />
+              <Card
+                title="Export"
+                description="Download cleaned data. Multiple formats. Automatic RAG integration."
+                className="p-8"
+              />
             </div>
           </div>
         </section>
@@ -202,27 +199,16 @@ export default function FeaturesPage() {
               Get the platform running in minutes. Process data. Search documents. Zero friction.
             </p>
             <div className="flex gap-4 justify-center">
-              <Link href="/docs" className="px-8 py-4 border border-black text-lg hover:bg-black hover:text-white transition-colors">
+              <Button href="/docs" variant="secondary">
                 Read Docs
-              </Link>
-              <Link href="http://localhost:5173" className="px-8 py-4 bg-black text-white text-lg hover:bg-[var(--accent)] transition-colors">
+              </Button>
+              <Button href="http://localhost:5173">
                 Launch App
-              </Link>
+              </Button>
             </div>
           </div>
         </section>
       </main>
-
-      <footer className="border-t border-black px-6 py-8">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div>© 2025 Xether AI</div>
-          <div className="flex gap-8">
-            <Link href="http://localhost:8000/docs" className="hover:underline">API</Link>
-            <Link href="https://github.com" className="hover:underline">GitHub</Link>
-            <Link href="http://localhost:5173" className="hover:underline">App</Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
