@@ -49,7 +49,7 @@ export default function DocsPage() {
             <h2 className="text-3xl font-bold mb-6">Installation</h2>
             <p className="mb-4 text-[var(--muted)]">Prerequisites: Docker, Node.js 18+, 8GB RAM minimum.</p>
             <pre className="bg-black text-white p-6 overflow-x-auto text-sm mb-4">
-{`# Clone repository
+              {`# Clone repository
 git clone <repository-url>
 cd xether-ai
 
@@ -67,10 +67,10 @@ cd ../frontend && npm install && npm run dev
           <section id="configuration" className="mb-16">
             <h2 className="text-3xl font-bold mb-6">Configuration</h2>
             <p className="mb-4 text-[var(--muted)]">Environment variables control service behavior.</p>
-            
+
             <h3 className="text-xl font-bold mb-3 mt-6">Backend (.env)</h3>
             <pre className="bg-black text-white p-6 overflow-x-auto text-sm mb-4">
-{`PORT=8000
+              {`PORT=8000
 DATABASE_URL=postgresql://user:pass@localhost:5432/db
 MINIO_ENDPOINT=localhost:9000
 REDIS_URL=redis://localhost:6379
@@ -79,7 +79,7 @@ JWT_SECRET_KEY=your-secret-key`}
 
             <h3 className="text-xl font-bold mb-3 mt-6">RAG Service (.env)</h3>
             <pre className="bg-black text-white p-6 overflow-x-auto text-sm mb-4">
-{`PORT=8001
+              {`PORT=8001
 VECTOR_DB_TYPE=chromadb
 LLM_PROVIDER=groq
 GROQ_API_KEY=your_key_here`}
@@ -102,7 +102,7 @@ GROQ_API_KEY=your_key_here`}
             <h2 className="text-3xl font-bold mb-6">Upload Datasets</h2>
             <p className="mb-4 text-[var(--muted)]">Supported formats: CSV, XLSX, JSON, Parquet. Max size: 500MB.</p>
             <pre className="bg-black text-white p-6 overflow-x-auto text-sm">
-{`curl -X POST http://localhost:8000/api/v1/datasets/upload \\
+              {`curl -X POST http://localhost:8000/api/v1/datasets/upload \\
   -F "file=@data.csv" \\
   -H "Authorization: Bearer <token>"`}
             </pre>
@@ -126,7 +126,7 @@ GROQ_API_KEY=your_key_here`}
             <h2 className="text-3xl font-bold mb-6">Monitoring</h2>
             <p className="mb-4 text-[var(--muted)]">Real-time job status tracking via WebSocket or polling.</p>
             <pre className="bg-black text-white p-6 overflow-x-auto text-sm">
-{`GET /api/v1/jobs/{job_id}
+              {`GET /api/v1/jobs/{job_id}
 
 Response:
 {
@@ -143,7 +143,7 @@ Response:
             <h2 className="text-3xl font-bold mb-6">Document Indexing</h2>
             <p className="mb-4 text-[var(--muted)]">Upload documents for semantic search. Automatic embedding generation.</p>
             <pre className="bg-black text-white p-6 overflow-x-auto text-sm">
-{`curl -X POST http://localhost:8001/api/v1/documents/upload \\
+              {`curl -X POST http://localhost:8001/api/v1/documents/upload \\
   -F "file=@document.pdf" \\
   -H "Authorization: Bearer <token>"`}
             </pre>
@@ -153,7 +153,7 @@ Response:
             <h2 className="text-3xl font-bold mb-6">Queries</h2>
             <p className="mb-4 text-[var(--muted)]">Ask questions in natural language. Get AI-generated answers with sources.</p>
             <pre className="bg-black text-white p-6 overflow-x-auto text-sm">
-{`POST /api/v1/queries
+              {`POST /api/v1/queries
 
 {
   "query": "What are the main findings?",
@@ -174,7 +174,7 @@ Response:
             <h2 className="text-3xl font-bold mb-6">Authentication</h2>
             <p className="mb-4 text-[var(--muted)]">JWT-based authentication. Include token in Authorization header.</p>
             <pre className="bg-black text-white p-6 overflow-x-auto text-sm">
-{`POST /api/v1/auth/login
+              {`POST /api/v1/auth/login
 
 {
   "username": "user",
