@@ -1,20 +1,10 @@
 import Link from "next/link";
+import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="border-b border-black px-6 py-4">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tight">XETHER</Link>
-          <div className="flex gap-8 text-sm">
-            <Link href="#features" className="hover:underline">Features</Link>
-            <Link href="#docs" className="hover:underline">Docs</Link>
-            <Link href="http://localhost:5173" className="px-4 py-2 bg-black text-white hover:bg-[var(--accent)] transition-colors">Launch App</Link>
-          </div>
-        </nav>
-      </header>
-
-      <main className="flex-1">
+    <div className="flex flex-col">
         <section className="px-6 py-32 max-w-7xl mx-auto">
           <h1 className="text-7xl font-bold leading-none mb-8 tracking-tight">
             Data processing.<br/>Document intelligence.<br/>Zero friction.
@@ -23,12 +13,10 @@ export default function Home() {
             AI-powered platform for automated data cleaning and semantic document search. Built for speed.
           </p>
           <div className="flex gap-4">
-            <Link href="http://localhost:5173" className="px-8 py-4 bg-black text-white text-lg hover:bg-[var(--accent)] transition-colors">
-              Get Started
-            </Link>
-            <Link href="#features" className="px-8 py-4 border border-black text-lg hover:bg-black hover:text-white transition-colors">
-              Learn More
-            </Link>
+          <Button href="http://localhost:5173">Get Started</Button>
+          <Button href="#features" variant="secondary">
+            Learn More
+          </Button>
           </div>
         </section>
 
@@ -36,46 +24,54 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black">
-              <div className="bg-white p-12">
-                <h3 className="text-2xl font-bold mb-4">Data Processing</h3>
-                <p className="text-[var(--muted)] mb-6">Automated cleaning, validation, transformation. 10+ operations. Real-time monitoring.</p>
+              <Card
+                title="Data Processing"
+                description="Automated cleaning, validation, transformation. 10+ operations. Real-time monitoring."
+                className="p-12"
+              >
                 <ul className="space-y-2 text-sm">
                   <li>• Remove duplicates</li>
                   <li>• Handle missing values</li>
                   <li>• Detect outliers</li>
                   <li>• Normalize data</li>
                 </ul>
-              </div>
-              <div className="bg-white p-12">
-                <h3 className="text-2xl font-bold mb-4">Document Search</h3>
-                <p className="text-[var(--muted)] mb-6">Semantic search with AI. Question answering. Source citations. Multi-format support.</p>
+              </Card>
+              <Card
+                title="Document Search"
+                description="Semantic search with AI. Question answering. Source citations. Multi-format support."
+                className="p-12"
+              >
                 <ul className="space-y-2 text-sm">
                   <li>• PDF, DOCX, TXT, CSV</li>
                   <li>• Vector embeddings</li>
                   <li>• LLM-powered answers</li>
                   <li>• Citation tracking</li>
                 </ul>
-              </div>
-              <div className="bg-white p-12">
-                <h3 className="text-2xl font-bold mb-4">Automation</h3>
-                <p className="text-[var(--muted)] mb-6">RAG integration after processing. Real-time notifications. Zero manual steps.</p>
+              </Card>
+              <Card
+                title="Automation"
+                description="RAG integration after processing. Real-time notifications. Zero manual steps."
+                className="p-12"
+              >
                 <ul className="space-y-2 text-sm">
                   <li>• Automatic indexing</li>
                   <li>• Pipeline orchestration</li>
                   <li>• Background processing</li>
                   <li>• Status tracking</li>
                 </ul>
-              </div>
-              <div className="bg-white p-12">
-                <h3 className="text-2xl font-bold mb-4">Architecture</h3>
-                <p className="text-[var(--muted)] mb-6">Microservices. FastAPI backend. React frontend. PostgreSQL, Redis, MinIO.</p>
+              </Card>
+              <Card
+                title="Architecture"
+                description="Microservices. FastAPI backend. React frontend. PostgreSQL, Redis, MinIO."
+                className="p-12"
+              >
                 <ul className="space-y-2 text-sm">
                   <li>• REST APIs</li>
                   <li>• Docker deployment</li>
                   <li>• Scalable design</li>
                   <li>• Type-safe</li>
                 </ul>
-              </div>
+              </Card>
             </div>
           </div>
         </section>
@@ -103,7 +99,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         <section id="docs" className="px-6 py-24 border-t border-black">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">Quick Start</h2>
@@ -131,7 +126,6 @@ cd frontend && npm install && npm run dev`}
             </div>
           </div>
         </section>
-
         <section className="px-6 py-24 border-t border-black">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">API Endpoints</h2>
@@ -161,18 +155,6 @@ cd frontend && npm install && npm run dev`}
             </div>
           </div>
         </section>
-      </main>
-
-      <footer className="border-t border-black px-6 py-8">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div>© 2025 Xether AI</div>
-          <div className="flex gap-8">
-            <Link href="http://localhost:8000/docs" className="hover:underline">API</Link>
-            <Link href="https://github.com" className="hover:underline">GitHub</Link>
-            <Link href="http://localhost:5173" className="hover:underline">App</Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

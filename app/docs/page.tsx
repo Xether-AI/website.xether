@@ -1,19 +1,9 @@
 import Link from "next/link";
+import { Button } from "@/components/Button";
 
 export default function DocsPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="border-b border-black px-6 py-4">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tight">XETHER</Link>
-          <div className="flex gap-8 text-sm">
-            <Link href="/#features" className="hover:underline">Features</Link>
-            <Link href="/docs" className="hover:underline">Docs</Link>
-            <Link href="http://localhost:5173" className="px-4 py-2 bg-black text-white hover:bg-[var(--accent)] transition-colors">Launch App</Link>
-          </div>
-        </nav>
-      </header>
-
+    <div className="flex flex-col">
       <main className="flex-1 flex">
         <aside className="w-64 border-r border-black px-6 py-12 sticky top-0 h-screen overflow-y-auto">
           <nav className="space-y-6">
@@ -260,17 +250,6 @@ Response:
           </section>
         </div>
       </main>
-
-      <footer className="border-t border-black px-6 py-8">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div>© 2025 Xether AI</div>
-          <div className="flex gap-8">
-            <Link href="http://localhost:8000/docs" className="hover:underline">API</Link>
-            <Link href="https://github.com" className="hover:underline">GitHub</Link>
-            <Link href="http://localhost:5173" className="hover:underline">App</Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
