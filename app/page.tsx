@@ -5,7 +5,7 @@ import { Card } from "@/components/Card";
 export default function Home() {
   return (
     <div className="flex flex-col">
-        <section className="px-6 py-32 max-w-7xl mx-auto">
+        <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <h1 className="text-7xl font-bold leading-none mb-8 tracking-tight">
             Data processing.<br/>Document intelligence.<br/>Zero friction.
           </h1>
@@ -20,10 +20,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="px-6 py-24 border-t border-black">
+        <section id="features" className="px-6 py-24 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border)]">
               <Card
                 title="Data Processing"
                 description="Automated cleaning, validation, transformation. 10+ operations. Real-time monitoring."
@@ -76,7 +76,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-6 py-24 border-t border-black bg-black text-white">
+        <section className="px-6 py-24 border-t border-[var(--border)] bg-[#020617] text-[var(--fg)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">Performance</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="docs" className="px-6 py-24 border-t border-black">
+        <section id="docs" className="px-6 py-24 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">Quick Start</h2>
             <div className="space-y-8 max-w-3xl">
@@ -126,11 +126,11 @@ cd frontend && npm install && npm run dev`}
             </div>
           </div>
         </section>
-        <section className="px-6 py-24 border-t border-black">
+        <section className="px-6 py-24 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">API Endpoints</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="border border-black p-8">
+              <div className="border border-[var(--border)] p-8 bg-[#020617]/60 rounded-xl">
                 <h3 className="text-xl font-bold mb-4">AI Backend</h3>
                 <p className="text-sm text-[var(--muted)] mb-4">Port 8000</p>
                 <ul className="space-y-2 text-sm font-mono">
@@ -141,7 +141,7 @@ cd frontend && npm install && npm run dev`}
                 </ul>
                 <Link href="http://localhost:8000/docs" className="inline-block mt-6 text-sm underline">View Docs →</Link>
               </div>
-              <div className="border border-black p-8">
+              <div className="border border-[var(--border)] p-8 bg-[#020617]/60 rounded-xl">
                 <h3 className="text-xl font-bold mb-4">RAG Service</h3>
                 <p className="text-sm text-[var(--muted)] mb-4">Port 8001</p>
                 <ul className="space-y-2 text-sm font-mono">

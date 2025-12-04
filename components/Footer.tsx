@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-black px-6 py-8 bg-white">
+    <footer className="border-t border-[var(--border)] px-6 py-8 bg-[#020617]">
       <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
         <div>© 2025 Xether AI</div>
         <div className="flex gap-8">

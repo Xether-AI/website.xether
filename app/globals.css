@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  /* Color tokens */
-  --bg: #ffffff;
-  --fg: #000000;
-  --accent: #0000ff;
-  --border: #000000;
-  --muted: #666666;
+  /* Color tokens - shadcn-inspired dark theme */
+  --bg: #020817;
+  --fg: #e5e7eb;
+  --accent: #38bdf8;
+  --border: #1e293b;
+  --muted: #9ca3af;
   
   /* Spacing tokens (8px base) */
   --space-1: 0.5rem;  /* 8px */
@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at top, #1e293b 0, #020817 45%, #020617 100%);
   color: var(--fg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: 1.5;
