@@ -1,72 +1,36 @@
-# Xether AI — Public Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Brutalist Next.js website for the Xether AI platform.
+## Getting Started
 
-## Design Principles
-
-- **Minimal**: Essential information only. No decoration.
-- **High contrast**: Black and white with single accent color.
-- **Typography**: Large headings, rigid hierarchy, system fonts.
-- **Geometry**: Sharp edges, consistent grids, precise spacing.
-- **Functional motion**: State changes only. No decoration.
-- **Accessibility**: WCAG AA compliant. Keyboard navigation. Screen reader support.
-
-## Structure
-
-```
-/                 Homepage with features overview
-/features         Detailed feature breakdown
-/docs             Documentation and guides
-/api              API reference
-```
-
-## Development
+First, run the development server:
 
 ```bash
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open http://localhost:3000
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Build
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-npm run build
-npm start
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Stack
+## Learn More
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- System fonts (no custom fonts)
+To learn more about Next.js, take a look at the following resources:
 
-## Color System
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Background: `#ffffff`
-- Foreground: `#000000`
-- Accent: `#0000ff`
-- Muted: `#666666`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Spacing Scale
+## Deploy on Vercel
 
-Consistent 8px base unit. All spacing uses multiples of 8.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Components
-
-- `Header`: Navigation bar
-- `Footer`: Site footer
-- `Button`: Primary/secondary buttons
-- `Card`: Content cards
-- `CodeBlock`: Code examples
-
-## Performance
-
-- Static generation where possible
-- Minimal JavaScript
-- No external fonts
-- Optimized images
-- Fast page loads
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

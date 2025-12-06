@@ -1,122 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  /* Color tokens - shadcn-inspired dark theme */
-  --bg: #020817;
-  --fg: #e5e7eb;
-  --accent: #38bdf8;
-  --border: #1e293b;
-  --muted: #9ca3af;
-  
-  /* Spacing tokens (8px base) */
-  --space-1: 0.5rem;  /* 8px */
-  --space-2: 1rem;    /* 16px */
-  --space-3: 1.5rem;  /* 24px */
-  --space-4: 2rem;    /* 32px */
-  --space-6: 3rem;    /* 48px */
-  --space-8: 4rem;    /* 64px */
-  --space-12: 6rem;   /* 96px */
-  --space-16: 8rem;   /* 128px */
-  
-  /* Type scale */
-  --text-xs: 0.75rem;   /* 12px */
-  --text-sm: 0.875rem;  /* 14px */
-  --text-base: 1rem;    /* 16px */
-  --text-lg: 1.125rem;  /* 18px */
-  --text-xl: 1.25rem;   /* 20px */
-  --text-2xl: 1.5rem;   /* 24px */
-  --text-3xl: 1.875rem; /* 30px */
-  --text-4xl: 2.25rem;  /* 36px */
-  --text-5xl: 3rem;     /* 48px */
-  --text-7xl: 4.5rem;   /* 72px */
-  --text-9xl: 8rem;     /* 128px */
-  
-  /* Motion curves */
-  --ease-linear: linear;
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* Durations */
-  --duration-fast: 150ms;
-  --duration-base: 200ms;
-  --duration-slow: 300ms;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-  background: radial-gradient(circle at top, #1e293b 0, #020817 45%, #020617 100%);
-  color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Focus styles for accessibility */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--fg);
-  outline-offset: 2px;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: opacity var(--duration-fast) var(--ease-out);
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  background: none;
-  transition: all var(--duration-base) var(--ease-out);
-}
-
-/* Selection */
-::selection {
-  background: var(--fg);
-  color: var(--bg);
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  :root {
-    --muted: #000000;
-  }
-}
-
-/* Print styles */
-@media print {
-  body {
-    background: white;
-    color: black;
-  }
-  
-  header,
-  footer {
-    display: none;
-  }
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
