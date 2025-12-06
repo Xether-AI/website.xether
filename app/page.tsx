@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="text-7xl font-bold leading-none mb-8 tracking-tight">
             Data processing.<br/>Document intelligence.<br/>Zero friction.
           </h1>
-          <p className="text-xl max-w-2xl mb-12 text-muted">
+          <p className="text-xl max-w-2xl mb-12 text-muted dark:text-muted light:text-gray-600">
             AI-powered platform for automated data cleaning and semantic document search. Built for speed.
           </p>
           <div className="flex gap-4">
@@ -20,10 +20,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="px-6 py-24 border-t border-border">
+        <section id="features" className="px-6 py-24 border-t border-border dark:border-border light:border-gray-300">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border dark:bg-border light:bg-gray-300">
               <Card
                 title="Data Processing"
                 description="Automated cleaning, validation, transformation. 10+ operations. Real-time monitoring."
@@ -76,7 +76,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-6 py-24 border-t border-border bg-[#020617] text-fg">
+        <section className="px-6 py-24 border-t border-border dark:border-border light:border-gray-300 bg-[#020617] dark:bg-[#020617] light:bg-gray-50 text-fg dark:text-fg light:text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">Performance</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="docs" className="px-6 py-24 border-t border-border">
+        <section id="docs" className="px-6 py-24 border-t border-border dark:border-border light:border-gray-300">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">Quick Start</h2>
             <div className="space-y-8 max-w-3xl">
@@ -113,26 +113,26 @@ cd frontend && npm install && npm run dev`}
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-4">2. Access Platform</h3>
-                <p className="text-muted mb-4">Open http://localhost:5173 in your browser.</p>
+                <p className="text-muted dark:text-muted light:text-gray-600 mb-4">Open http://localhost:5173 in your browser.</p>
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-4">3. Process Data</h3>
-                <p className="text-muted">Upload datasets. Configure pipelines. Monitor jobs. Download results.</p>
+                <p className="text-muted dark:text-muted light:text-gray-600">Upload datasets. Configure pipelines. Monitor jobs. Download results.</p>
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-4">4. Search Documents</h3>
-                <p className="text-muted">Upload documents. Ask questions. Get AI answers with citations.</p>
+                <p className="text-muted dark:text-muted light:text-gray-600">Upload documents. Ask questions. Get AI answers with citations.</p>
               </div>
             </div>
           </div>
         </section>
-        <section className="px-6 py-24 border-t border-border">
+        <section className="px-6 py-24 border-t border-border dark:border-border light:border-gray-300">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16">API Endpoints</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="border border-border p-8 bg-[#020617]/60 rounded-xl">
+              <div className="border border-border dark:border-border light:border-gray-300 p-8 bg-[#020617]/60 dark:bg-[#020617]/60 light:bg-white rounded-xl">
                 <h3 className="text-xl font-bold mb-4">AI Backend</h3>
-                <p className="text-sm text-muted mb-4">Port 8000</p>
+                <p className="text-sm text-muted dark:text-muted light:text-gray-600 mb-4">Port 8000</p>
                 <ul className="space-y-2 text-sm font-mono">
                   <li>/api/v1/datasets</li>
                   <li>/api/v1/pipelines</li>
