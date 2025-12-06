@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+/* Prevent flash of unstyled content */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.dark) {
+    color-scheme: light;
+  }
+}
