@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ClientLayout } from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Xether AI — Data Processing & Document Intelligence",
@@ -29,13 +27,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-gradient-radial dark:bg-gradient-radial light:bg-gradient-radial-light text-gray-900 dark:text-fg antialiased">
-        <ThemeProvider>
-          <div className="min-h-screen flex flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
