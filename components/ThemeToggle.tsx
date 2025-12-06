@@ -1,9 +1,22 @@
 "use client";
 
 import { useTheme } from "./ThemeProvider";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent rendering during SSR to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="w-9 h-9" aria-hidden="true" />
+    );
+  }
 
   return (
     <button
