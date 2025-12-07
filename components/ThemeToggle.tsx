@@ -1,15 +1,27 @@
 "use client";
 
-import { useTheme } from "./ThemeProvider";
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     setMounted(true);
+    // Get theme from localStorage or default to dark
+    const stored = localStorage.getItem("theme") as "light" | "dark" | null;
+    if (stored) {
+      setTheme(stored);
+    }
   }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(newTheme);
+  };
 
   // Prevent rendering during SSR to avoid hydration mismatch
   if (!mounted) {
