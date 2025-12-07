@@ -2,24 +2,42 @@
 
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
+import { Button } from "./Button";
 
 export function Header() {
   return (
-    <header className="border-b border-gray-700 px-6 py-4 sticky top-0 bg-[#020817]/90 backdrop-blur z-50">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold tracking-tight hover:opacity-70 transition-opacity text-white">
-          XETHER
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="container flex h-16 max-w-screen-2xl items-center justify-between px-6">
+        <Link 
+          href="/" 
+          className="flex items-center space-x-2 text-2xl font-bold tracking-tight transition-opacity hover:opacity-80"
+        >
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            XETHER
+          </span>
         </Link>
-        <div className="flex gap-8 text-sm items-center text-gray-300">
-          <Link href="/#features" className="hover:underline">Features</Link>
-          <Link href="/docs" className="hover:underline">Docs</Link>
-          <ThemeToggle />
+        <div className="flex items-center gap-6">
           <Link 
+            href="#features" 
+            className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+          >
+            Features
+          </Link>
+          <Link 
+            href="https://docs.xetherai.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+          >
+            Docs
+          </Link>
+          <ThemeToggle />
+          <Button 
             href="http://localhost:5173" 
-            className="px-4 py-2 rounded-md bg-accent text-black hover:bg-sky-400 transition-colors"
+            className="h-9 px-4 text-sm"
           >
             Launch App
-          </Link>
+          </Button>
         </div>
       </nav>
     </header>
