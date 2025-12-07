@@ -3,8 +3,9 @@ import "./globals.css";
 import { ClientLayout } from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
-  title: "Xether AI — Data Processing & Document Intelligence",
-  description: "AI-powered data cleaning and semantic document search. No friction.",
+  title: "Xether AI — Enterprise Data Processing & Document Intelligence",
+  description: "AI-powered data cleaning and semantic document search. Process millions of rows, search documents semantically, and get insights in seconds.",
+  keywords: ["data processing", "document intelligence", "AI", "data cleaning", "semantic search"],
 };
 
 export default function RootLayout({
@@ -26,7 +27,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-gradient-radial dark:bg-gradient-radial light:bg-gradient-radial-light text-gray-900 dark:text-fg antialiased">
+      <body className="min-h-screen bg-background text-foreground antialiased">
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

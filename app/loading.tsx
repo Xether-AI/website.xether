@@ -1,11 +1,9 @@
-import React from "react";
-
 export default function Loading() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center">
       <div className="text-center">
-        <div className="w-16 h-16 border-4 border-black border-t-transparent animate-spin mx-auto mb-4"></div>
-        <p className="text-sm text-muted">Loading...</p>
+        <div className="mb-4 h-16 w-16 animate-spin rounded-full border-4 border-border border-t-primary mx-auto"></div>
+        <p className="text-sm text-muted-foreground">Loading...</p>
       </div>
     </div>
   );
