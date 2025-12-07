@@ -112,16 +112,16 @@ cd frontend && npm install && npm run dev`}
                 </pre>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">2. Access Platform</h3>
-                <p className="text-muted dark:text-muted light:text-gray-600 mb-4">Open http://localhost:5173 in your browser.</p>
+                <h3 className="text-2xl font-bold mb-4 text-white">2. Access Platform</h3>
+                <p className="text-gray-400 mb-4">Open http://localhost:5173 in your browser.</p>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">3. Process Data</h3>
-                <p className="text-muted dark:text-muted light:text-gray-600">Upload datasets. Configure pipelines. Monitor jobs. Download results.</p>
+                <h3 className="text-2xl font-bold mb-4 text-white">3. Process Data</h3>
+                <p className="text-gray-400">Upload datasets. Configure pipelines. Monitor jobs. Download results.</p>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">4. Search Documents</h3>
-                <p className="text-muted dark:text-muted light:text-gray-600">Upload documents. Ask questions. Get AI answers with citations.</p>
+                <h3 className="text-2xl font-bold mb-4 text-white">4. Search Documents</h3>
+                <p className="text-gray-400">Upload documents. Ask questions. Get AI answers with citations.</p>
               </div>
             </div>
           </div>
@@ -130,27 +130,27 @@ cd frontend && npm install && npm run dev`}
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold mb-16 text-white">API Endpoints</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="border border-border dark:border-border light:border-gray-300 p-8 bg-[#020617]/60 dark:bg-[#020617]/60 light:bg-white rounded-xl">
-                <h3 className="text-xl font-bold mb-4">AI Backend</h3>
-                <p className="text-sm text-muted dark:text-muted light:text-gray-600 mb-4">Port 8000</p>
-                <ul className="space-y-2 text-sm font-mono">
+              <div className="border border-gray-700 p-8 bg-[#020617]/60 rounded-xl">
+                <h3 className="text-xl font-bold mb-4 text-white">AI Backend</h3>
+                <p className="text-sm text-gray-400 mb-4">Port 8000</p>
+                <ul className="space-y-2 text-sm font-mono text-gray-300">
                   <li>/api/v1/datasets</li>
                   <li>/api/v1/pipelines</li>
                   <li>/api/v1/jobs</li>
                   <li>/api/v1/reports</li>
                 </ul>
-                <Link href="http://localhost:8000/docs" className="inline-block mt-6 text-sm underline">View Docs →</Link>
+                <Link href="http://localhost:8000/docs" className="inline-block mt-6 text-sm underline text-accent">View Docs →</Link>
               </div>
-              <div className="border border-border p-8 bg-[#020617]/60 rounded-xl">
-                <h3 className="text-xl font-bold mb-4">RAG Service</h3>
-                <p className="text-sm text-muted mb-4">Port 8001</p>
-                <ul className="space-y-2 text-sm font-mono">
+              <div className="border border-gray-700 p-8 bg-[#020617]/60 rounded-xl">
+                <h3 className="text-xl font-bold mb-4 text-white">RAG Service</h3>
+                <p className="text-sm text-gray-400 mb-4">Port 8001</p>
+                <ul className="space-y-2 text-sm font-mono text-gray-300">
                   <li>/api/v1/documents</li>
                   <li>/api/v1/queries</li>
                   <li>/api/v1/collections</li>
                   <li>/api/v1/embeddings</li>
                 </ul>
-                <Link href="http://localhost:8001/docs" className="inline-block mt-6 text-sm underline">View Docs →</Link>
+                <Link href="http://localhost:8001/docs" className="inline-block mt-6 text-sm underline text-accent">View Docs →</Link>
               </div>
             </div>
           </div>
