@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <div className="flex flex-col">
         <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
-          <h1 className="text-7xl font-bold leading-none mb-8 tracking-tight">
+          <h1 className="text-7xl font-bold leading-none mb-8 tracking-tight text-white">
             Data processing.<br/>Document intelligence.<br/>Zero friction.
           </h1>
-          <p className="text-xl max-w-2xl mb-12 text-muted dark:text-muted light:text-gray-600">
+          <p className="text-xl max-w-2xl mb-12 text-gray-400 dark:text-gray-400 light:text-gray-600">
             AI-powered platform for automated data cleaning and semantic document search. Built for speed.
           </p>
           <div className="flex gap-4">
@@ -20,10 +20,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="px-6 py-24 border-t border-border dark:border-border light:border-gray-300">
+        <section id="features" className="px-6 py-24 border-t border-gray-700">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-5xl font-bold mb-16">Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border dark:bg-border light:bg-gray-300">
+            <h2 className="text-5xl font-bold mb-16 text-white">Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-700">
               <Card
                 title="Data Processing"
                 description="Automated cleaning, validation, transformation. 10+ operations. Real-time monitoring."
@@ -76,9 +76,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-6 py-24 border-t border-border dark:border-border light:border-gray-300 bg-[#020617] dark:bg-[#020617] light:bg-gray-50 text-fg dark:text-fg light:text-gray-900">
+        <section className="px-6 py-24 border-t border-gray-700 bg-[#020617] text-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-5xl font-bold mb-16">Performance</h2>
+            <h2 className="text-5xl font-bold mb-16 text-white">Performance</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
               <div>
                 <div className="text-5xl font-bold mb-2">1M</div>
