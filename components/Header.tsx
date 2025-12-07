@@ -5,12 +5,12 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   return (
-    <header className="border-b border-border dark:border-border light:border-gray-300 px-6 py-4 sticky top-0 bg-bg/90 dark:bg-bg/90 light:bg-white/90 backdrop-blur z-50">
+    <header className="border-b border-gray-700 px-6 py-4 sticky top-0 bg-[#020817]/90 backdrop-blur z-50">
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold tracking-tight hover:opacity-70 transition-opacity">
+        <Link href="/" className="text-2xl font-bold tracking-tight hover:opacity-70 transition-opacity text-white">
           XETHER
         </Link>
-        <div className="flex gap-8 text-sm items-center">
+        <div className="flex gap-8 text-sm items-center text-gray-300">
           <Link href="/#features" className="hover:underline">Features</Link>
           <Link href="/docs" className="hover:underline">Docs</Link>
           <ThemeToggle />

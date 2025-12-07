@@ -99,12 +99,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="docs" className="px-6 py-24 border-t border-border dark:border-border light:border-gray-300">
+        <section id="docs" className="px-6 py-24 border-t border-gray-700">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-5xl font-bold mb-16">Quick Start</h2>
+            <h2 className="text-5xl font-bold mb-16 text-white">Quick Start</h2>
             <div className="space-y-8 max-w-3xl">
               <div>
-                <h3 className="text-2xl font-bold mb-4">1. Start Services</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">1. Start Services</h3>
                 <pre className="bg-black text-white p-6 overflow-x-auto text-sm">
 {`cd backend && docker-compose up -d
 cd rag && docker-compose up -d
@@ -126,9 +126,9 @@ cd frontend && npm install && npm run dev`}
             </div>
           </div>
         </section>
-        <section className="px-6 py-24 border-t border-border dark:border-border light:border-gray-300">
+        <section className="px-6 py-24 border-t border-gray-700">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-5xl font-bold mb-16">API Endpoints</h2>
+            <h2 className="text-5xl font-bold mb-16 text-white">API Endpoints</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="border border-border dark:border-border light:border-gray-300 p-8 bg-[#020617]/60 dark:bg-[#020617]/60 light:bg-white rounded-xl">
                 <h3 className="text-xl font-bold mb-4">AI Backend</h3>
