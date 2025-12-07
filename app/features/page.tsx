@@ -1,117 +1,230 @@
-import Link from "next/link";
+"use client";
+
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { 
+  Upload, 
+  Sparkles, 
+  BarChart, 
+  Eye, 
+  FileText, 
+  Download,
+  Database,
+  Server,
+  Cpu,
+  Container,
+  CheckCircle2,
+  ArrowRight
+} from "lucide-react";
 
 export default function FeaturesPage() {
   return (
     <div className="flex flex-col">
-      <main className="flex-1">
-        <section className="px-6 py-24 max-w-7xl mx-auto">
-          <h1 className="text-7xl font-bold mb-8 tracking-tight">Features</h1>
-          <p className="text-xl text-muted max-w-3xl">
-            Everything you need for data processing and document intelligence. Nothing you don't.
-          </p>
-        </section>
-
-        <section className="px-6 py-16 border-t border-border">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Data Processing</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
-              <Card
-                title="Upload"
-                description="Drag and drop CSV, XLSX, JSON, Parquet files. Up to 500MB. Instant validation."
-                className="p-8"
-              />
-              <Card
-                title="Clean"
-                description="Remove duplicates, handle missing values, detect outliers, normalize data."
-                className="p-8"
-              />
-              <Card
-                title="Transform"
-                description="Encode categories, convert types, standardize formats, apply custom rules."
-                className="p-8"
-              />
-              <Card
-                title="Monitor"
-                description="Real-time progress tracking. Job status updates. Error reporting."
-                className="p-8"
-              />
-              <Card
-                title="Report"
-                description="Quality scores, statistics, transformation logs, before/after comparisons."
-                className="p-8"
-              />
-              <Card
-                title="Export"
-                description="Download cleaned data. Multiple formats. Automatic RAG integration."
-                className="p-8"
-              />
-            </div>
+      {/* Hero */}
+      <section className="px-6 py-24 md:py-32">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+              Powerful Features for
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> Modern Teams</span>
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              Everything you need for data processing and document intelligence. 
+              Nothing you don't.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="px-6 py-16 border-t border-border bg-[#020617] text-fg">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Document Search</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Indexing</h3>
+      {/* Data Processing */}
+      <section className="border-t border-border bg-card/50 px-6 py-24">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">Data Processing</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Transform raw data into actionable insights with automated workflows
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card className="group transition-all hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Upload className="h-6 w-6" />
+                </div>
+                <CardTitle>Upload</CardTitle>
+                <CardDescription>
+                  Drag and drop CSV, XLSX, JSON, Parquet files. Up to 500MB. Instant validation.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="group transition-all hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <Sparkles className="h-6 w-6" />
+                </div>
+                <CardTitle>Clean</CardTitle>
+                <CardDescription>
+                  Remove duplicates, handle missing values, detect outliers, normalize data.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="group transition-all hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <BarChart className="h-6 w-6" />
+                </div>
+                <CardTitle>Transform</CardTitle>
+                <CardDescription>
+                  Encode categories, convert types, standardize formats, apply custom rules.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="group transition-all hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <Eye className="h-6 w-6" />
+                </div>
+                <CardTitle>Monitor</CardTitle>
+                <CardDescription>
+                  Real-time progress tracking. Job status updates. Error reporting.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="group transition-all hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <FileText className="h-6 w-6" />
+                </div>
+                <CardTitle>Report</CardTitle>
+                <CardDescription>
+                  Quality scores, statistics, transformation logs, before/after comparisons.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="group transition-all hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <Download className="h-6 w-6" />
+                </div>
+                <CardTitle>Export</CardTitle>
+                <CardDescription>
+                  Download cleaned data. Multiple formats. Automatic RAG integration.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Document Search */}
+      <section className="border-t border-border bg-background px-6 py-24">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">Document Search</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              AI-powered semantic search with intelligent question answering
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Database className="h-5 w-5" />
+                  </div>
+                  Indexing
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
                 <ul className="space-y-3 text-sm">
-                  <li>• PDF, DOCX, TXT, CSV, JSON support</li>
-                  <li>• Automatic text extraction</li>
-                  <li>• Vector embeddings generation</li>
-                  <li>• Chunk optimization</li>
-                  <li>• Metadata preservation</li>
-                  <li>• Background processing</li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    PDF, DOCX, TXT, CSV, JSON support
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Automatic text extraction
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Vector embeddings generation
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Chunk optimization
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Metadata preservation
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Background processing
+                  </li>
                 </ul>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Querying</h3>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                    <FileText className="h-5 w-5" />
+                  </div>
+                  Querying
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
                 <ul className="space-y-3 text-sm">
-                  <li>• Natural language questions</li>
-                  <li>• Semantic similarity search</li>
-                  <li>• LLM-powered answers</li>
-                  <li>• Source citations</li>
-                  <li>• Query history</li>
-                  <li>• Context-aware responses</li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Natural language questions
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Semantic similarity search
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    LLM-powered answers
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Source citations
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Query history
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                    Context-aware responses
+                  </li>
                 </ul>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="px-6 py-16 border-t border-border">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Automation</h2>
-            <div className="space-y-8 max-w-3xl">
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="text-2xl font-bold mb-2">Pipeline Orchestration</h3>
-                <p className="text-muted">Configure multi-step workflows. Automatic execution. Error handling. Retry logic.</p>
-              </div>
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="text-2xl font-bold mb-2">RAG Integration</h3>
-                <p className="text-muted">Cleaned data automatically indexed. Zero manual steps. Instant searchability.</p>
-              </div>
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="text-2xl font-bold mb-2">Notifications</h3>
-                <p className="text-muted">Real-time alerts. Job completion. Error notifications. Status updates.</p>
-              </div>
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="text-2xl font-bold mb-2">Background Processing</h3>
-                <p className="text-muted">Celery workers. Redis queue. Async operations. Scalable architecture.</p>
-              </div>
-            </div>
+      {/* Architecture */}
+      <section className="border-t border-border bg-card/50 px-6 py-24">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">Enterprise Architecture</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Built on modern, scalable technologies
+            </p>
           </div>
-        </section>
-
-        <section className="px-6 py-16 border-t border-border">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Architecture</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="border border-border p-8 bg-[#020617]/70 rounded-xl">
-                <h3 className="text-2xl font-bold mb-4">Backend</h3>
-                <ul className="space-y-2 text-sm">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <Card>
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Server className="h-6 w-6" />
+                </div>
+                <CardTitle>Backend</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>• FastAPI framework</li>
                   <li>• PostgreSQL database</li>
                   <li>• Redis caching</li>
@@ -119,10 +232,17 @@ export default function FeaturesPage() {
                   <li>• Celery task queue</li>
                   <li>• JWT authentication</li>
                 </ul>
-              </div>
-              <div className="border border-border p-8 bg-[#020617]/70 rounded-xl">
-                <h3 className="text-2xl font-bold mb-4">Frontend</h3>
-                <ul className="space-y-2 text-sm">
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <Cpu className="h-6 w-6" />
+                </div>
+                <CardTitle>Frontend</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>• React 19</li>
                   <li>• TypeScript</li>
                   <li>• React Query</li>
@@ -130,10 +250,17 @@ export default function FeaturesPage() {
                   <li>• Vite build tool</li>
                   <li>• Responsive design</li>
                 </ul>
-              </div>
-              <div className="border border-border p-8 bg-[#020617]/70 rounded-xl">
-                <h3 className="text-2xl font-bold mb-4">RAG Service</h3>
-                <ul className="space-y-2 text-sm">
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Database className="h-6 w-6" />
+                </div>
+                <CardTitle>RAG Service</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>• ChromaDB / Qdrant</li>
                   <li>• OpenAI / Groq LLMs</li>
                   <li>• Sentence transformers</li>
@@ -141,10 +268,17 @@ export default function FeaturesPage() {
                   <li>• Vector embeddings</li>
                   <li>• Semantic search</li>
                 </ul>
-              </div>
-              <div className="border border-border p-8 bg-[#020617]/70 rounded-xl">
-                <h3 className="text-2xl font-bold mb-4">Deployment</h3>
-                <ul className="space-y-2 text-sm">
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <Container className="h-6 w-6" />
+                </div>
+                <CardTitle>Deployment</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>• Docker containers</li>
                   <li>• Docker Compose</li>
                   <li>• Environment configs</li>
@@ -152,63 +286,34 @@ export default function FeaturesPage() {
                   <li>• Log aggregation</li>
                   <li>• Horizontal scaling</li>
                 </ul>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="px-6 py-16 border-t border-border bg-[#020617] text-fg">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Security</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-bold mb-3">Authentication</h3>
-                <ul className="space-y-2 text-sm">
-                  <li>• JWT tokens</li>
-                  <li>• Password hashing</li>
-                  <li>• Session management</li>
-                  <li>• API keys</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-3">Authorization</h3>
-                <ul className="space-y-2 text-sm">
-                  <li>• Role-based access</li>
-                  <li>• Resource ownership</li>
-                  <li>• Permission checks</li>
-                  <li>• Scope validation</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-3">Protection</h3>
-                <ul className="space-y-2 text-sm">
-                  <li>• Rate limiting</li>
-                  <li>• CORS policies</li>
-                  <li>• Input validation</li>
-                  <li>• Security headers</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-24 border-t border-border">
-          <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-8">Ready to start?</h2>
-            <p className="text-xl text-muted mb-12 max-w-2xl mx-auto">
-              Get the platform running in minutes. Process data. Search documents. Zero friction.
+      {/* CTA */}
+      <section className="border-t border-border bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10 px-6 py-24">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              Ready to Get Started?
+            </h2>
+            <p className="mb-10 text-xl text-muted-foreground">
+              Experience the power of AI-driven data processing and document intelligence.
             </p>
-            <div className="flex gap-4 justify-center">
-              <Button href="/docs" variant="secondary">
-                Read Docs
-              </Button>
-              <Button href="http://localhost:5173">
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button href="http://localhost:5173" size="lg" className="w-full sm:w-auto">
                 Launch App
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button href="https://docs.xetherai.com" variant="outline" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
+                View Documentation
               </Button>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </div>
   );
 }

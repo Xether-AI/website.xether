@@ -1,84 +1,160 @@
-import Link from "next/link";
+"use client";
+
 import { Button } from "@/components/Button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Code2, Key, Server, ArrowRight, ExternalLink } from "lucide-react";
 
 export default function APIPage() {
   return (
     <div className="flex flex-col">
-      <main className="flex-1">
-        <section className="px-6 py-24 max-w-7xl mx-auto">
-          <h1 className="text-7xl font-bold mb-8 tracking-tight">API Reference</h1>
-          <p className="text-xl text-muted max-w-3xl">
-            RESTful APIs for data processing and document intelligence. OpenAPI documentation included.
-          </p>
-        </section>
-
-        <section className="px-6 py-16 border-t border-border">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="border border-border p-8 bg-[#020617]/70 rounded-xl">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold">AI Backend</h3>
-                  <span className="text-xs px-3 py-1 rounded-full bg-[#020617] border border-border">
-                    Port 8000
-                  </span>
-                </div>
-                <p className="text-muted mb-6">Data processing, pipeline execution, job monitoring.</p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-mono">/api/v1/datasets</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-mono">/api/v1/pipelines</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-mono">/api/v1/jobs</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-mono">/api/v1/reports</span>
-                  </div>
-                </div>
-                <Button href="http://localhost:8000/docs" className="text-sm px-6 py-3">
-                  View Documentation →
-                </Button>
-              </div>
-
-              <div className="border border-border p-8 bg-[#020617]/70 rounded-xl">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold">RAG Service</h3>
-                  <span className="text-xs px-3 py-1 rounded-full bg-[#020617] border border-border">
-                    Port 8001
-                  </span>
-                </div>
-                <p className="text-muted mb-6">Document indexing, semantic search, AI-powered Q&A.</p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-mono">/api/v1/documents</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-mono">/api/v1/queries</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-mono">/api/v1/collections</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-mono">/api/v1/embeddings</span>
-                  </div>
-                </div>
-                <Button href="http://localhost:8001/docs" className="text-sm px-6 py-3">
-                  View Documentation →
-                </Button>
-              </div>
-            </div>
+      {/* Hero */}
+      <section className="px-6 py-24 md:py-32">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                API Reference
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              RESTful APIs for data processing and document intelligence. 
+              OpenAPI documentation included.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="px-6 py-16 border-t border-border bg-[#020617] text-fg">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Authentication</h2>
-            <div className="max-w-3xl">
-              <p className="mb-6">JWT-based authentication. Include token in Authorization header.</p>
-              <pre className="bg-[#020617] text-fg border border-border rounded-lg p-6 overflow-x-auto text-sm mb-6">
+      {/* Services */}
+      <section className="border-t border-border bg-card/50 px-6 py-24">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">Services</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Two powerful services, one unified platform
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card className="group transition-all hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Server className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <CardTitle>AI Backend</CardTitle>
+                      <span className="text-xs text-muted-foreground">Port 8000</span>
+                    </div>
+                  </div>
+                </div>
+                <CardDescription>
+                  Data processing, pipeline execution, job monitoring.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6 space-y-3">
+                  <div className="flex items-center gap-2 rounded-md bg-muted p-2">
+                    <Code2 className="h-4 w-4 text-muted-foreground" />
+                    <code className="text-sm font-mono">/api/v1/datasets</code>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-md bg-muted p-2">
+                    <Code2 className="h-4 w-4 text-muted-foreground" />
+                    <code className="text-sm font-mono">/api/v1/pipelines</code>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-md bg-muted p-2">
+                    <Code2 className="h-4 w-4 text-muted-foreground" />
+                    <code className="text-sm font-mono">/api/v1/jobs</code>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-md bg-muted p-2">
+                    <Code2 className="h-4 w-4 text-muted-foreground" />
+                    <code className="text-sm font-mono">/api/v1/reports</code>
+                  </div>
+                </div>
+                <Button 
+                  href="http://localhost:8000/docs" 
+                  variant="outline" 
+                  className="w-full"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Documentation
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="group transition-all hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                      <Server className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <CardTitle>RAG Service</CardTitle>
+                      <span className="text-xs text-muted-foreground">Port 8001</span>
+                    </div>
+                  </div>
+                </div>
+                <CardDescription>
+                  Document indexing, semantic search, AI-powered Q&A.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6 space-y-3">
+                  <div className="flex items-center gap-2 rounded-md bg-muted p-2">
+                    <Code2 className="h-4 w-4 text-muted-foreground" />
+                    <code className="text-sm font-mono">/api/v1/documents</code>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-md bg-muted p-2">
+                    <Code2 className="h-4 w-4 text-muted-foreground" />
+                    <code className="text-sm font-mono">/api/v1/queries</code>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-md bg-muted p-2">
+                    <Code2 className="h-4 w-4 text-muted-foreground" />
+                    <code className="text-sm font-mono">/api/v1/collections</code>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-md bg-muted p-2">
+                    <Code2 className="h-4 w-4 text-muted-foreground" />
+                    <code className="text-sm font-mono">/api/v1/embeddings</code>
+                  </div>
+                </div>
+                <Button 
+                  href="http://localhost:8001/docs" 
+                  variant="outline" 
+                  className="w-full"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Documentation
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Authentication */}
+      <section className="border-t border-border bg-background px-6 py-24">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mb-16 text-center">
+            <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <Key className="h-8 w-8" />
+            </div>
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">Authentication</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              JWT-based authentication. Include token in Authorization header.
+            </p>
+          </div>
+          <div className="mx-auto max-w-3xl">
+            <Card>
+              <CardHeader>
+                <CardTitle>Login Endpoint</CardTitle>
+                <CardDescription>Get your access token</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <pre className="overflow-x-auto rounded-lg bg-muted p-6 text-sm">
 {`POST /api/v1/auth/login
 Content-Type: application/json
 
@@ -92,23 +168,35 @@ Response:
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "token_type": "bearer"
 }`}
-              </pre>
-              <p className="text-sm">Use the access token in subsequent requests:</p>
-              <pre className="bg-[#020617] text-fg border border-border rounded-lg p-6 overflow-x-auto text-sm mt-4">
+                </pre>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  Use the access token in subsequent requests:
+                </p>
+                <pre className="mt-2 overflow-x-auto rounded-lg bg-muted p-4 text-sm">
 {`Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`}
-              </pre>
-            </div>
+                </pre>
+              </CardContent>
+            </Card>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="px-6 py-16 border-t border-border">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Common Endpoints</h2>
-            
-            <div className="space-y-8">
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="text-2xl font-bold mb-2">Upload Dataset</h3>
-                <pre className="bg-[#020617] text-fg border border-border rounded-lg p-6 overflow-x-auto text-sm mt-4">
+      {/* Common Endpoints */}
+      <section className="border-t border-border bg-card/50 px-6 py-24">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">Common Endpoints</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Essential API endpoints for data processing and document search
+            </p>
+          </div>
+          <div className="mx-auto max-w-4xl space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Upload Dataset</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <pre className="overflow-x-auto rounded-lg bg-muted p-6 text-sm">
 {`POST /api/v1/datasets/upload
 Content-Type: multipart/form-data
 Authorization: Bearer <token>
@@ -123,11 +211,14 @@ Response:
   "file_size": 1024000
 }`}
                 </pre>
-              </div>
-
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="text-2xl font-bold mb-2">Execute Pipeline</h3>
-                <pre className="bg-[#020617] text-fg border border-border rounded-lg p-6 overflow-x-auto text-sm mt-4">
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Execute Pipeline</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <pre className="overflow-x-auto rounded-lg bg-muted p-6 text-sm">
 {`POST /api/v1/pipelines/execute
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -143,29 +234,14 @@ Response:
   "status": "processing"
 }`}
                 </pre>
-              </div>
-
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="text-2xl font-bold mb-2">Upload Document</h3>
-                <pre className="bg-[#020617] text-fg border border-border rounded-lg p-6 overflow-x-auto text-sm mt-4">
-{`POST /api/v1/documents/upload
-Content-Type: multipart/form-data
-Authorization: Bearer <token>
-
-file: document.pdf
-
-Response:
-{
-  "id": 1,
-  "filename": "document.pdf",
-  "status": "indexing"
-}`}
-                </pre>
-              </div>
-
-              <div className="border-l-4 border-accent pl-6">
-                <h3 className="text-2xl font-bold mb-2">Query Documents</h3>
-                <pre className="bg-[#020617] text-fg border border-border rounded-lg p-6 overflow-x-auto text-sm mt-4">
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Query Documents</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <pre className="overflow-x-auto rounded-lg bg-muted p-6 text-sm">
 {`POST /api/v1/queries
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -187,86 +263,35 @@ Response:
   ]
 }`}
                 </pre>
-              </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="border-t border-border bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10 px-6 py-24">
+        <div className="container mx-auto max-w-screen-2xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              Ready to Integrate?
+            </h2>
+            <p className="mb-10 text-xl text-muted-foreground">
+              Start building with our comprehensive API documentation.
+            </p>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button href="http://localhost:8000/docs" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
+                View API Docs
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+              <Button href="http://localhost:5173" variant="outline" size="lg" className="w-full sm:w-auto">
+                Launch App
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
-        </section>
-
-        <section className="px-6 py-16 border-t border-border">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Response Codes</h2>
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b-2 border-border">
-                  <th className="text-left py-4 font-bold">Code</th>
-                  <th className="text-left py-4 font-bold">Status</th>
-                  <th className="text-left py-4 font-bold">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-border">
-                  <td className="py-4 font-mono">200</td>
-                  <td className="py-4">OK</td>
-                  <td className="py-4 text-muted">Request successful</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-4 font-mono">201</td>
-                  <td className="py-4">Created</td>
-                  <td className="py-4 text-muted">Resource created</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-4 font-mono">400</td>
-                  <td className="py-4">Bad Request</td>
-                  <td className="py-4 text-muted">Invalid input</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-4 font-mono">401</td>
-                  <td className="py-4">Unauthorized</td>
-                  <td className="py-4 text-muted">Authentication required</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-4 font-mono">404</td>
-                  <td className="py-4">Not Found</td>
-                  <td className="py-4 text-muted">Resource not found</td>
-                </tr>
-                <tr className="border-b border-black">
-                  <td className="py-4 font-mono">413</td>
-                  <td className="py-4">Payload Too Large</td>
-                  <td className="py-4 text-muted">File exceeds size limit</td>
-                </tr>
-                <tr>
-                  <td className="py-4 font-mono">500</td>
-                  <td className="py-4">Server Error</td>
-                  <td className="py-4 text-muted">Internal server error</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="px-6 py-16 border-t border-border bg-[#020617] text-fg">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12">Rate Limits</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <div className="text-4xl font-bold mb-2">100</div>
-                <div className="text-sm">requests/minute</div>
-                <div className="text-xs text-gray-400 mt-2">Per endpoint</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">1000</div>
-                <div className="text-sm">requests/hour</div>
-                <div className="text-xs text-gray-400 mt-2">Per user</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">500MB</div>
-                <div className="text-sm">max file size</div>
-                <div className="text-xs text-gray-400 mt-2">Per upload</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </div>
   );
 }
