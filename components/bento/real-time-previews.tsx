@@ -78,38 +78,16 @@ const RealtimeCodingPreviews: React.FC = () => {
               justifyContent: "center",
             }}
           >
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>switch (type) {"{"}</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> case 'success':</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> return {"{"}</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>
-              {" "}
-              border: theme === 'dark' ? 'border-[rgba(34,197,94,0.4)]' : 'border-green-200',
-            </p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> icon: (</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>
-              {" "}
-              &lt;svg className={"{baseIconClasses}"} fill="none" viewBox="0 0 14 14"&gt;
-            </p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> &lt;path</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>
-              {" "}
-              d="M3.85156 7.875L6.47656 10.5L10.8516 3.5"
-            </p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>
-              {" "}
-              stroke="var(--realtime-primary-color)"
-            </p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>
-              {" "}
-              strokeLinecap="round"
-            </p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>
-              {" "}
-              strokeLinejoin="round"
-            </p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> strokeWidth="1.5"</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> /&gt;</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> &lt;/svg&gt;</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>{"{"}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> "dataset": "churn_prediction",</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> "version": "v2.2.0",</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> "schema": {"{"}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   "user_id": "string",</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   "churn_prob": "float",</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   "last_active": "timestamp"</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> {"},"}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> "row_count": 45000</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>{"}"}</p>
           </div>
         </div>
       </div>
@@ -184,7 +162,7 @@ const RealtimeCodingPreviews: React.FC = () => {
                 whiteSpace: "pre",
               }}
             >
-              Download for macOS
+              Rollback to v2.1
             </div>
           </div>
         </div>

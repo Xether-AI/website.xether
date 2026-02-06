@@ -29,8 +29,8 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
-            <span className="text-foreground text-xl font-semibold">
-              <h4 className="text-2xl font-bold font-">Xether AI</h4>
+            <span className="text-foreground text-xl font-bold" style={{ fontFamily: "SN Pro" }}>
+              <span className="text-xl font-bold">Xether AI</span>
             </span>
           </div>
           <nav className="hidden md:flex items-center gap-2">

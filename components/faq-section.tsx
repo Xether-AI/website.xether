@@ -6,34 +6,34 @@ import { ChevronDown } from "lucide-react"
 
 const faqData = [
   {
-    question: "What is Pointer and who is it for?",
+    question: "What is Xether AI and who is it for?",
     answer:
-      "Pointer is an AI-powered development platform designed for developers, teams, and organizations who want toaccelerate their coding workflow. It's perfect for both individual developers looking to enhance their productivity and teams seeking seamless collaboration tools.",
+      "Xether AI is a data infrastructure platform for AI/ML teams, data engineers, and enterprises. It automates data preparation, versioning, and quality control, treating data with the same discipline as code.",
   },
   {
-    question: "How does Pointer's AI code review work?",
+    question: "How does the automated data cleaning work?",
     answer:
-      "Our AI analyzes your code in real-time, providing intelligent suggestions for improvements, catching potential bugs, and ensuring best practices. It learns from your coding patterns and adapts to your team's standards, making code reviews faster and more consistent.",
+      "Our infrastructure analyzes your data streams in real-time to detect schema violations, outliers, and inconsistencies. It can automatically fix common issues or flag them for review, ensuring your models are always trained on high-quality data.",
   },
   {
-    question: "Can I integrate Pointer with my existing tools?",
+    question: "Can I connect Xether AI to my existing data warehouse?",
     answer:
-      "Yes! Pointer offers one-click integrations with popular development tools including GitHub, GitLab, VS Code, Slack, and many more. Our MCP connectivity allows you to easily manage and configure server access across your entire development stack.",
+      "Yes! Xether AI offers seamless integration with major data warehouses like Snowflake, BigQuery, and Redshift, as well as object storage like S3 and various databases (Postgres, MongoDB).",
   },
   {
-    question: "What's included in the free plan?",
+    question: "What is 'Dataset Version Control'?",
     answer:
-      "The free plan includes real-time code suggestions, basic integrations, single MCP server connection, up to 2 AI coding agents, and Vercel deployments with Pointer branding. It's perfect for individual developers getting started.",
+      "Similar to Git for code, Xether AI tracks every change to your datasets. You can branch, merge, and rollback datasets instantly, ensuring full reproducibility for your AI experiments.",
   },
   {
-    question: "How do parallel coding agents work?",
+    question: "How does synthetic augmentation help?",
     answer:
-      "Our parallel coding agents can work on different parts of your codebase simultaneously, solving complex problems faster than traditional single-threaded approaches. You can launch multiple agents to handle different tasks like bug fixes, feature development, and code optimization concurrently.",
+      "When you have missing or sparse data, Xether AI can generate high-fidelity synthetic data to fill the gaps, preserving the statistical properties of your original dataset while protecting privacy.",
   },
   {
-    question: "Is my code secure with Pointer?",
+    question: "Is Xether AI suitable for sensitive enterprise data?",
     answer:
-      "Absolutely. We use enterprise-grade security measures including end-to-end encryption, secure data transmission, and compliance with industry standards. Your code never leaves your secure environment without your explicit permission, and we offer on-premises deployment options for enterprise customers.",
+      "Absolutely. We are built for the enterprise with end-to-end encryption, RBAC, audit logs, and compliance with major standards. You can also deploy Xether AI on-premises or in your own VPC.",
   },
 ]
 
@@ -99,7 +99,7 @@ export function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="self-stretch text-center text-muted-foreground text-sm font-medium leading-[18.20px] break-words">
-            Everything you need to know about Pointer and how it can transform your development workflow
+            Everything you need to know about Xether AI and how it can transform your data workflow
           </p>
         </div>
       </div>
