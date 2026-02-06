@@ -6,8 +6,8 @@ import Link from "next/link"
 export function HeroSection() {
   return (
     <section
-      className="flex flex-col items-center text-center relative mx-auto rounded-2xl overflow-hidden my-6 py-0 px-4
-         w-full h-[400px] md:w-[1220px] md:h-[600px] lg:h-[810px] md:px-0"
+      className="flex flex-col items-center text-center relative mx-auto rounded-2xl overflow-hidden my-5 py-0 px-0
+         w-full h-[400px] md:w-full md:h-[600px] lg:h-[810px] md:px-0"
     >
       {/* SVG Background */}
       <div className="absolute inset-0 z-0">
@@ -446,7 +446,7 @@ export function HeroSection() {
         </p>
       </div>
 
-      <Link href="https://vercel.com/home" target="_blank" rel="noopener noreferrer">
+      <Link href="/login" rel="noopener noreferrer">
         <Button className="relative z-10 bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-3 rounded-full font-medium text-base shadow-lg ring-1 ring-white/10">
           Signup for free
         </Button>

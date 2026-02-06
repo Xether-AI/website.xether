@@ -7,9 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Xether AI - AI Powered Automation',
+  description: 'Xether AI is a platform that uses AI to automate your workflow.',
   icons: {
     icon: [
       {
