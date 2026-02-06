@@ -8,12 +8,12 @@ interface McpConnectivityIllustrationProps {
 const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = ({ className = "" }) => {
   // Integration data with new SVG paths
   const integrations = [
-    { name: "Figma", icon: "/images/mcp-integrations/figma.svg", installed: true },
-    { name: "Shadcn UI", icon: "/images/mcp-integrations/shadcn.svg" },
-    { name: "Next.js", icon: "/images/mcp-integrations/nextjs.svg", installed: true },
-    { name: "Tailwind CSS", icon: "/images/mcp-integrations/tailwind-css.svg" },
-    { name: "Resend", icon: "/images/mcp-integrations/resend.svg", installed: true },
-    { name: "React", icon: "/images/mcp-integrations/react.svg" },
+    { name: "User Profiles", icon: "/images/mcp-integrations/figma.svg", installed: true },
+    { name: "Transactions", icon: "/images/mcp-integrations/shadcn.svg" },
+    { name: "Clickstream", icon: "/images/mcp-integrations/nextjs.svg", installed: true },
+    { name: "IoT Sensors", icon: "/images/mcp-integrations/tailwind-css.svg" },
+    { name: "Medical Records", icon: "/images/mcp-integrations/resend.svg", installed: true },
+    { name: "Financial Logs", icon: "/images/mcp-integrations/react.svg" },
   ]
 
   return (
@@ -78,7 +78,7 @@ const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = 
                 whiteSpace: "nowrap",
               }}
             >
-              Search for servers
+              Generate Synthetic Data
             </span>
           </div>
           {/* Integration List */}
@@ -153,7 +153,7 @@ const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = 
                       whiteSpace: "nowrap",
                     }}
                   >
-                    Installed
+                    Generated
                   </span>
                 </div>
               )}

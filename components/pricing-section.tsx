@@ -9,53 +9,54 @@ export function PricingSection() {
 
   const pricingPlans = [
     {
-      name: "Free",
+      name: "Starter",
       monthlyPrice: "$0",
       annualPrice: "$0",
-      description: "Perfect for individuals starting their journey.",
+      description: "For small teams and side projects.",
       features: [
-        "Real-time code suggestions",
-        "Basic integration logos",
-        "Single MCP server connection",
-        "Up to 2 AI coding agents",
-        "Vercel deployments with Pointer branding",
+        "10GB Storage",
+        "Basic Data Cleaning",
+        "2 Data Sources",
+        "30-day Version History",
+        "Community Support",
       ],
       buttonText: "Get Started",
       buttonClass:
         "bg-zinc-300 shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] outline outline-0.5 outline-[#1e29391f] outline-offset-[-0.5px] text-gray-800 text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-zinc-400",
     },
     {
-      name: "Pro",
-      monthlyPrice: "$20",
-      annualPrice: "$16",
-      description: "Ideal for professionals.",
+      name: "Growth",
+      monthlyPrice: "$99",
+      annualPrice: "$79",
+      description: "For scaling data teams.",
       features: [
-        "Enhanced real-time previews",
-        "Unlimited integrations with custom logos",
-        "Multiple MCP server connections",
-        "Up to 10 concurrent AI coding agents",
-        "Collaborative coding with team chat",
-        "Advanced version control integrations",
-        "Priority email and chat support",
+        "500GB Storage",
+        "Advanced Anomaly Detection",
+        "Unlimited Data Sources",
+        "Unlimited Version History",
+        "Synthetic Data Generation",
+        "Team Collaboration",
+        "Priority Support",
       ],
-      buttonText: "Join now",
+      buttonText: "Start Trial",
       buttonClass:
         "bg-primary-foreground shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-primary text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-primary-foreground/90",
       popular: true,
     },
     {
-      name: "Ultra",
-      monthlyPrice: "$200",
-      annualPrice: "$160",
-      description: "Tailored solutions for teams.",
+      name: "Enterprise",
+      monthlyPrice: "Custom",
+      annualPrice: "Custom",
+      description: "For organizations with strict governance.",
       features: [
-        "Dedicated account support",
-        "Unlimited MCP server clusters",
-        "Unlimited AI coding agents",
-        "Enterprise-grade security and compliance",
-        "Priority deployments and SLA guarantees",
+        "Unlimited Storage",
+        "Private VPC Deployment",
+        "SSO & RBAC",
+        "Audit Logs & Compliance",
+        "Dedicated Account Manager",
+        "SLA Guarantees",
       ],
-      buttonText: "Talk to Sales",
+      buttonText: "Contact Sales",
       buttonClass:
         "bg-secondary shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-secondary-foreground text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-secondary/90",
     },
@@ -69,8 +70,7 @@ export function PricingSection() {
             Pricing built for every developer
           </h2>
           <p className="self-stretch text-center text-muted-foreground text-sm font-medium leading-tight">
-            Choose a plan that fits your coding workflow, from individuals starting out to <br /> growing professionals
-            and large organizations.
+            Choose a plan that fits your data volume, from startups <br /> to large enterprises.
           </p>
         </div>
         <div className="pt-4">
