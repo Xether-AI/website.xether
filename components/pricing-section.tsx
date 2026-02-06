@@ -40,7 +40,7 @@ export function PricingSection() {
       ],
       buttonText: "Start Trial",
       buttonClass:
-        "bg-primary-foreground shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-primary text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-primary-foreground/90",
+        "bg-primary-foreground shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-gray-200 text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-primary-foreground/90",
       popular: true,
     },
     {
@@ -166,7 +166,7 @@ export function PricingSection() {
               >
                 <div className="px-1.5 flex justify-center items-center gap-2">
                   <span
-                    className={`text-center text-sm font-medium leading-tight ${plan.name === "Free" ? "text-gray-800" : plan.name === "Pro" ? "text-primary" : "text-zinc-950"}`}
+                    className={`text-center text-sm font-medium leading-tight ${plan.name === "Starter" ? "text-gray-800" : plan.name === "Enterprise" ? "text-gray-800" : plan.name === "Growth" ? "text-gray-200" : "text-red-600" }`}
                   >
                     {plan.buttonText}
                   </span>
