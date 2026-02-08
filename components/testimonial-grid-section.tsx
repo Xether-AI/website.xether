@@ -3,63 +3,71 @@ import Image from "next/image"
 const testimonials = [
   {
     quote:
-      "The real-time code suggestions from Pointer feel like having a senior engineer reviewing every line of code as you write. The accuracy of its recommendations has improved our overall code quality, reduced review time.",
-    name: "Annette Black",
-    company: "Sony",
+      "The automated schema validation from Xether feels like having a data quality engineer reviewing every stream. The accuracy of its anomaly detection has improved our model performance significantly.",
+    name: "Alex Chen",
+    company: "DataWorks",
     avatar: "/images/avatars/annette-black.png",
     type: "large-teal",
   },
   {
     quote:
-      "Integrating Pointer into our stack was smooth, and the MCP server connections saved us days of configuration work",
-    name: "Dianne Russell",
-    company: "McDonald's",
+      "Connecting Xether to our Snowflake warehouse saved us days of custom pipeline engineering. The integration just works.",
+    name: "Marcus Johnson",
+    company: "FinTech Corp",
     avatar: "/images/avatars/dianne-russell.png",
     type: "small-dark",
   },
   {
     quote:
-      "Pointer’s multi-agent coding feature has been a game changer. We’re fixing complex bugs in hours instead of spending entire sprints on them.",
-    name: "Cameron Williamson",
-    company: "IBM",
+      "Xether's synthetic data augmentation is a game changer. We’re training robust models on edge cases that used to take months to collect.",
+    name: "Sarah Williams",
+    company: "HealthAI",
     avatar: "/images/avatars/cameron-williamson.png",
     type: "small-dark",
   },
   {
     quote:
-      "We no longer juggle multiple tools. Pointer brought all our integrations together in one place, which simplified our entire workflow.",
-    name: "Robert Fox",
-    company: "MasterCard",
+      "We no longer struggle with data lineage. Xether brought all our versioning and governance into one place, simplifying compliance.",
+    name: "David Park",
+    company: "SecureNet",
     avatar: "/images/avatars/robert-fox.png",
     type: "small-dark",
   },
   {
     quote:
-      "We started with the free plan just to test it out, but within a week we upgraded to Pro. Now, we can’t imagine coding without it",
-    name: "Darlene Robertson",
-    company: "Ferrari",
+      "We started with the free tier to clean our datasets, but quickly upgraded for the enterprise governance features. Essential for our regulated industry.",
+    name: "Emily Davis",
+    company: "AutoDrive",
     avatar: "/images/avatars/darlene-robertson.png",
     type: "small-dark",
   },
   {
     quote:
-      "Collaborative coding feels effortless now. With Pointer’s real-time previews, pair programming has become faster and more productive.",
-    name: "Cody Fisher",
-    company: "Apple",
+      "Reproducible pipelines are effortless now. With Xether's version control, rolling back a bad data merge takes seconds.",
+    name: "Michael Brown",
+    company: "LogiTech",
     avatar: "/images/avatars/cody-fisher.png",
     type: "small-dark",
   },
   {
     quote:
-      "Deploying on Vercel with Pointer was not just simple, it felt seamless. We went from coding to seeing our changes live in minutes without worrying about build pipelines or configuration issues.",
-    name: "Albert Flores",
-    company: "Louis Vuitton",
+      "Deploying our data quality gates with Xether was seamless. We went from messy lakes to pristine warehouses in days without complex configuration.",
+    name: "Jessica Taylor",
+    company: "RetailWave",
     avatar: "/images/avatars/albert-flores.png",
     type: "large-light",
   },
 ]
 
-const TestimonialCard = ({ quote, name, company, avatar, type }) => {
+interface TestimonialCardProps {
+  quote: string
+  name: string
+  company: string
+  avatar: string
+  type: string
+}
+
+const TestimonialCard = ({ quote, name, company, avatar, type }: TestimonialCardProps) => {
   const isLargeCard = type.startsWith("large")
   const avatarSize = isLargeCard ? 48 : 36
   const avatarBorderRadius = isLargeCard ? "rounded-[41px]" : "rounded-[30.75px]"
@@ -133,11 +141,11 @@ export function TestimonialGridSection() {
       <div className="self-stretch py-6 md:py-8 lg:py-14 flex flex-col justify-center items-center gap-2">
         <div className="flex flex-col justify-start items-center gap-4">
           <h2 className="text-center text-foreground text-3xl md:text-4xl lg:text-[40px] font-semibold leading-tight md:leading-tight lg:leading-[40px]">
-            Coding made effortless
+            Trusted by Data Teams
           </h2>
           <p className="self-stretch text-center text-muted-foreground text-sm md:text-sm lg:text-base font-medium leading-[18.20px] md:leading-relaxed lg:leading-relaxed">
-            {"Hear how developers ship products faster, collaborate seamlessly,"} <br />{" "}
-            {"and build with confidence using Pointer's powerful AI tools"}
+            {"Hear how engineering teams ensure data quality, streamline pipelines,"} <br />{" "}
+            {"and build reliable AI models with Xether."}
           </p>
         </div>
       </div>

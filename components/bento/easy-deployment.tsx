@@ -25,26 +25,26 @@ const DeploymentEasy: React.FC<DeploymentEasyProps> = ({ width = "100%", height 
    * Console log output (static for demo) – can be replaced via props
    * ---------------------------------------------------------- */
   const logLines = [
-    "[16:37:25.637] Running build in Washington, D.C., USA (East) – iad1",
-    "[16:37:25.638] Build machine configuration: 2 cores, 8 GB",
-    "[16:37:25.653] Retrieving list of deployment files...",
-    "[16:37:25.741] Previous build caches not available",
-    "[16:37:25.979] Downloading 84 deployment files...",
-    '[16:37:29.945] Running "vercel build"',
-    "[16:37:30.561] Vercel CLI 44.5.0",
-    '[16:37:30.880] Running "install" command: `bun install`...',
-    "[16:37:30.914] bun install v1.2.19 (aad3abea)",
-    "[16:37:30.940] Resolving dependencies",
-    "[16:37:34.436] Resolved, downloaded and extracted [1116]",
-    '[16:37:34.436] warn: incorrect peer dependency "react@19.1.0"',
-    "[16:37:37.265] Saved lockfile",
-    "[16:37:39.076] Next.js anonymous telemetry notice",
-    "[16:37:39.137] ▲ Next.js 15.2.4",
-    "[16:37:41.439] ✓ Compiled successfully",
-    "[16:37:53.979] ✓ Generated static pages",
-    "[16:38:00.585] ○ (Static) prerendered as static content",
-    "[16:38:01.099] Build Completed in /vercel/output [30s]",
-    "🚀 Deployment complete – Easy!",
+    "[16:37:25.637] Checking RBAC policies for user: admin@xether.ai",
+    "[16:37:25.638] Dataset: customer_churn_v2 (Sensitive)",
+    "[16:37:25.653] ⚠️  PII detected in column 'email' - applying masking...",
+    "[16:37:25.741] ✓ PII masking complete",
+    "[16:37:25.979] Validating schema compliance (v1.4.2)...",
+    '[16:37:29.945] Running "data audit"',
+    "[16:37:30.561] Xether Audit Log v2.1.0",
+    '[16:37:30.880] Verifying data lineage...',
+    "[16:37:30.914] ✓ Lineage trace complete",
+    "[16:37:30.940] Encrypting for transport",
+    "[16:37:34.436] Uploading to secure storage [us-east-1]",
+    '[16:37:34.436] info: dataset marked as immutable',
+    "[16:37:37.265] Updated catalog",
+    "[16:37:39.076] Notifying compliance officer",
+    "[16:37:39.137] ▲ Governance Check Passed",
+    "[16:37:41.439] ✓ Access granted for 24h",
+    "[16:37:53.979] ✓ Audit log #89234 created",
+    "[16:38:00.585] ○ Ready for usage",
+    "[16:38:01.099] Process Completed [4s]",
+    "🔒 Secure Access Granted",
   ]
 
   return (
@@ -58,7 +58,7 @@ const DeploymentEasy: React.FC<DeploymentEasyProps> = ({ width = "100%", height 
         ...themeVars,
       }}
       role="img"
-      aria-label="Deployment console output with Deploy on Vercel button"
+      aria-label="Deployment console output with Deploy Policy button"
     >
       {/* -------------------------------------------------------- */}
       {/* Console / Terminal panel                                */}
@@ -149,7 +149,7 @@ const DeploymentEasy: React.FC<DeploymentEasyProps> = ({ width = "100%", height 
             "0px 42.075px 11.475px rgba(0, 0, 0, 0), 0px 26.775px 10.2px rgba(0, 0, 0, 0.01), 0px 15.3px 8.925px rgba(0, 0, 0, 0.05), 0px 6.375px 6.375px rgba(0, 0, 0, 0.09), 0px 1.275px 3.825px rgba(0, 0, 0, 0.1)",
         }}
       >
-        🚀 Deploy on Vercel
+        🔒 Enforce Policy
       </button>
     </div>
   )
