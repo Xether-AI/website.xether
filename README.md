@@ -35,9 +35,28 @@ It is designed to feel like GitLab does for code, but applied to **datasets and 
 
 - **Framework**: Next.js 16 (App Router)
 - **Library**: React 19.2
+- **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Components**: Shadcn/UI (Radix UI primitives)
+- **Data Fetching**: TanStack Query (React Query)
+- **API Communication**: REST (to main backend)
+
+## Frontend Architecture
+
+### Responsibilities
+
+- Explain what Xether AI is and what problems it solves
+- Showcase core capabilities and features
+- Provide pricing information
+- Direct users to sign up or request demos
+- Communicate value proposition to ML engineers, data engineers, and enterprises
+
+### Communication
+
+- **Backend API**: REST only
+- **No direct storage access**: All data flows through backend APIs
+- **Authentication**: OAuth2 flow via backend
 
 ## Design Philosophy
 
