@@ -9,6 +9,7 @@ import * as z from "zod"
 
 import { api } from "@/lib/api/client"
 import { ApiError } from "@/lib/api/errors"
+import { OAuthButtons } from "@/components/auth/oauth-buttons"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -55,18 +56,7 @@ export function SignupForm() {
 
   return (
     <div className="space-y-6">
-      <Button asChild variant="outline" className="w-full">
-        <a href="/api/auth/oauth2/start">Continue with SSO</a>
-      </Button>
-
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t border-border" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">or</span>
-        </div>
-      </div>
+      <OAuthButtons />
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit((v) => mutation.mutate(v))} className="space-y-4">
