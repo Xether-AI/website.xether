@@ -32,6 +32,12 @@ Welcome to the Xether AI marketing website documentation.
   - Pre-existing issues
   - Recommendations
 
+- **[Hydration Fix](HYDRATION_FIX.md)** - Theme hydration mismatch resolution
+  - Issue description
+  - Root cause
+  - Solution implemented
+  - Testing results
+
 ## 📚 Additional Resources
 
 - **[Theme System](../THEME_SYSTEM.md)** - Dark/light mode implementation

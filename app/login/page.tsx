@@ -4,8 +4,8 @@ import { redirect } from "next/navigation"
 import { LoginForm } from "@/components/auth/login-form"
 import { isAuthenticated } from "@/lib/server/session"
 
-export default function LoginPage() {
-  if (isAuthenticated()) {
+export default async function LoginPage() {
+  if (await isAuthenticated()) {
     redirect(process.env.NEXT_PUBLIC_APP_URL || "/")
   }
 

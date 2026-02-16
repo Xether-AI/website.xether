@@ -126,42 +126,44 @@ export function MyComponent() {
 
 ## Implementation Details
 
+### Using next-themes
+
+The project uses the `next-themes` library which provides:
+- Proper SSR/hydration handling
+- No flash of unstyled content (FOUC)
+- System preference detection
+- localStorage persistence
+- TypeScript support
+
+### Configuration in app/providers.tsx
+
+```typescript
+<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  {children}
+</ThemeProvider>
+```
+
+- `attribute="class"` - Adds `dark` or `light` class to `<html>`
+- `defaultTheme="system"` - Uses system preference by default
+- `enableSystem` - Allows system preference detection
+
 ### Preventing FOUC
-A blocking script in `<head>` applies the theme class before React hydrates:
 
-```html
-<script>
-  try {
-    const theme = localStorage.getItem('theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.classList.add(theme);
-  } catch (e) {}
-</script>
-```
-
-### Theme Persistence
-- Theme choice is saved to `localStorage` as `'theme'`
-- Automatically restored on page load
-- Falls back to system preference if no saved theme
-
-### System Preference Detection
-```javascript
-window.matchMedia('(prefers-color-scheme: dark)').matches
-```
+The `suppressHydrationWarning` prop on the `<html>` tag prevents React from warning about the theme class mismatch during hydration. The `next-themes` library handles this automatically.
 
 ## Files Modified
 
-### New Files
-- `components/ThemeProvider.tsx` - Theme context and state management
-- `components/ThemeToggle.tsx` - Toggle button component
-- `THEME_SYSTEM.md` - This documentation
-
-### Updated Files
-- `app/layout.tsx` - Added ThemeProvider wrapper and FOUC prevention script
-- `components/Header.tsx` - Made client component, added ThemeToggle
-- `tailwind.config.ts` - Added `darkMode: "class"` and light theme colors
-- `app/globals.css` - Minimal CSS for color-scheme
+### Core Files
+- `app/providers.tsx` - ThemeProvider wrapper using next-themes
+- `app/layout.tsx` - Added suppressHydrationWarning
+- `components/theme-provider.tsx` - Wrapper for next-themes
+- `components/ThemeToggle.tsx` - Theme toggle button using useTheme hook
+- `tailwind.config.ts` - Added `darkMode: "class"`
+- `app/globals.css` - CSS variables for theming
 - All page components - Added dark/light mode classes
+
+### Dependencies
+- `next-themes` - Theme management library (already installed)
 
 ## Testing
 
