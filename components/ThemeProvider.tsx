@@ -13,21 +13,19 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Initialize theme from localStorage or system preference
-    if (typeof window === 'undefined') return 'dark';
-    
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored) return stored;
-    
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return prefersDark ? "dark" : "light";
-  });
+  const [theme, setTheme] = useState<Theme>("dark");
 
+  // Initialize theme on mount
   useEffect(() => {
+    const stored = localStorage.getItem("theme") as Theme | null;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    const initialTheme = stored || (prefersDark ? "dark" : "light");
+    setTheme(initialTheme);
     setMounted(true);
   }, []);
 
+  // Apply theme changes to DOM
   useEffect(() => {
     if (!mounted) return;
     

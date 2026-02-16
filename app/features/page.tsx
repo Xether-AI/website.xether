@@ -30,7 +30,7 @@ export default function FeaturesPage() {
             </h1>
             <p className="text-xl text-muted-foreground">
               Everything you need for data processing and document intelligence. 
-              Nothing you don't.
+              Nothing you don&apos;t.
             </p>
           </div>
         </div>

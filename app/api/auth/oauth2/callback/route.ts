@@ -20,7 +20,8 @@ export async function GET(req: Request) {
   const url = new URL(req.url)
   const code = url.searchParams.get('code')
   const state = url.searchParams.get('state')
-  const storedState = cookies().get(OAUTH_STATE_COOKIE)?.value ?? null
+  const cookieStore = await cookies()
+  const storedState = cookieStore.get(OAUTH_STATE_COOKIE)?.value ?? null
 
   if (!code) {
     return NextResponse.json({ error: 'Missing OAuth code' }, { status: 400 })
@@ -67,14 +68,11 @@ export async function GET(req: Request) {
     )
   }
 
-  const accessToken =
-    typeof data === 'object' && data && 'access_token' in (data as any)
-      ? String((data as any).access_token)
-      : null
-  const refreshToken =
-    typeof data === 'object' && data && 'refresh_token' in (data as any)
-      ? String((data as any).refresh_token)
-      : null
+  type TokenResponse = { access_token?: string; refresh_token?: string }
+  const tokenData = data as TokenResponse | null
+  
+  const accessToken = tokenData?.access_token ? String(tokenData.access_token) : null
+  const refreshToken = tokenData?.refresh_token ? String(tokenData.refresh_token) : null
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || ''
   const next = url.searchParams.get('next')
