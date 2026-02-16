@@ -14,15 +14,15 @@ export function LargeTestimonial() {
               </div>
               <div className="flex justify-start items-center gap-5">
                 <Image
-                  src="/images/avatars/elena-rodriguez.png"
-                  alt="Elena Rodriguez avatar"
+                  src="/images/avatars/dianne-russell.png"
+                  alt="Dianne Russell avatar"
                   width={48}
                   height={48}
                   className="w-12 h-12 relative rounded-full"
                   style={{ border: "1px solid rgba(0, 0, 0, 0.08)" }}
                 />
                 <div className="flex flex-col justify-start items-start">
-                  <div className="text-foreground text-base font-medium leading-6">Elena Rodriguez</div>
+                  <div className="text-foreground text-base font-medium leading-6">Dianne Russell</div>
                   <div className="text-muted-foreground text-sm font-normal leading-6">{"VP of Data, TechFlow"}</div>
                 </div>
               </div>

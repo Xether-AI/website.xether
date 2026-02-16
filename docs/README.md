@@ -38,6 +38,12 @@ Welcome to the Xether AI marketing website documentation.
   - Solution implemented
   - Testing results
 
+- **[Async Cookies Fix](ASYNC_COOKIES_FIX.md)** - Next.js 15+ async cookies API
+  - cookies() Promise handling
+  - Session utilities update
+  - Page components update
+  - Missing avatar fix
+
 ## 📚 Additional Resources
 
 - **[Theme System](../THEME_SYSTEM.md)** - Dark/light mode implementation
