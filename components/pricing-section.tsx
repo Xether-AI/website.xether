@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true)
@@ -100,6 +101,15 @@ export function PricingSection() {
       </div>
       <div className="self-stretch px-5 flex flex-col md:flex-row justify-start items-start gap-4 md:gap-6 mt-6 max-w-[1100px] mx-auto">
         {pricingPlans.map((plan) => (
+          (() => {
+            const href =
+              plan.name === "Enterprise"
+                ? "/contact"
+                : plan.name === "Growth"
+                  ? "/signup"
+                  : "/signup"
+
+            return (
           <div
             key={plan.name}
             className={`flex-1 p-4 overflow-hidden rounded-xl flex flex-col justify-start items-start gap-6 ${plan.popular ? "bg-primary shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.10)]" : "bg-gradient-to-b from-gray-50/5 to-gray-50/0"}`}
@@ -162,15 +172,18 @@ export function PricingSection() {
                 </div>
               </div>
               <Button
+                asChild
                 className={`self-stretch px-5 py-2 rounded-[40px] flex justify-center items-center ${plan.buttonClass}`}
               >
-                <div className="px-1.5 flex justify-center items-center gap-2">
-                  <span
-                    className={`text-center text-sm font-medium leading-tight ${plan.name === "Starter" ? "text-gray-800" : plan.name === "Enterprise" ? "text-gray-800" : plan.name === "Growth" ? "text-gray-200" : "text-red-600" }`}
-                  >
-                    {plan.buttonText}
-                  </span>
-                </div>
+                <Link href={href}>
+                  <div className="px-1.5 flex justify-center items-center gap-2">
+                    <span
+                      className={`text-center text-sm font-medium leading-tight ${plan.name === "Starter" ? "text-gray-800" : plan.name === "Enterprise" ? "text-gray-800" : plan.name === "Growth" ? "text-gray-200" : "text-red-600" }`}
+                    >
+                      {plan.buttonText}
+                    </span>
+                  </div>
+                </Link>
               </Button>
             </div>
             <div className="self-stretch flex flex-col justify-start items-start gap-4">
@@ -198,6 +211,8 @@ export function PricingSection() {
               </div>
             </div>
           </div>
+            )
+          })()
         ))}
       </div>
     </section>
