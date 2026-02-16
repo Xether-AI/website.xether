@@ -29,5 +29,8 @@ export const api = {
   forgotPassword(payload: ForgotPasswordPayload) {
     return apiFetch<ApiOk>('/api/auth/forgot-password', { method: 'POST', body: payload })
   },
+  logout() {
+    return apiFetch<ApiOk>('/api/auth/logout', { method: 'POST' })
+  },
 }
 

@@ -33,5 +33,7 @@ export type ForgotPasswordPayload = {
   email: string
 }
 
+export type LogoutPayload = Record<string, never>
+
 export type ApiOk = { ok: true }
 
