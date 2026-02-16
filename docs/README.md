@@ -18,6 +18,13 @@ Welcome to the Xether AI marketing website documentation.
   - Error handling
   - Security considerations
 
+- **[OAuth Setup Guide](OAUTH_SETUP.md)** - OAuth provider configuration
+  - Google OAuth setup
+  - GitHub OAuth setup
+  - GitLab OAuth setup
+  - Enterprise SSO configuration
+  - Troubleshooting guide
+
 ## ✅ Project Status
 
 - **[Completion Summary](COMPLETION_SUMMARY.md)** - Phase 4 & 5 completion report
@@ -43,6 +50,11 @@ Welcome to the Xether AI marketing website documentation.
   - Session utilities update
   - Page components update
   - Missing avatar fix
+
+- **[OAuth Buttons Fix](OAUTH_BUTTONS_FIX.md)** - OAuth buttons display behavior
+  - Default show all buttons
+  - Opt-out vs opt-in model
+  - Better development experience
 
 ## 📚 Additional Resources
 

@@ -7,19 +7,10 @@ interface OAuthButtonsProps {
 }
 
 export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
-  const googleEnabled = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true'
-  const githubEnabled = process.env.NEXT_PUBLIC_GITHUB_OAUTH_ENABLED === 'true'
-  const gitlabEnabled = process.env.NEXT_PUBLIC_GITLAB_OAUTH_ENABLED === 'true'
-
-  const hasAnyProvider = googleEnabled || githubEnabled || gitlabEnabled
-
-  if (!hasAnyProvider) {
-    return (
-      <Button asChild variant="outline" className="w-full">
-        <a href="/api/auth/oauth2/start">Continue with SSO</a>
-      </Button>
-    )
-  }
+  // Check if providers are explicitly disabled (default is enabled for better UX)
+  const googleEnabled = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED !== 'false'
+  const githubEnabled = process.env.NEXT_PUBLIC_GITHUB_OAUTH_ENABLED !== 'false'
+  const gitlabEnabled = process.env.NEXT_PUBLIC_GITLAB_OAUTH_ENABLED !== 'false'
 
   return (
     <>
@@ -76,7 +67,7 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
           </Button>
         )}
 
-        {/* Generic SSO option */}
+        {/* Generic SSO option - always shown */}
         <Button asChild variant="outline" className="w-full">
           <a href="/api/auth/oauth2/start">Continue with Enterprise SSO</a>
         </Button>
