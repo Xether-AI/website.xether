@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { api } from "@/lib/api/client";
+import { ApiError } from "@/lib/api/errors";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -28,12 +31,18 @@ export function CTASection() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, you would send this to your API
-    console.log(values);
-    toast.success("Thanks for your interest! We'll be in touch soon.");
-    form.reset();
-  }
+  const mutation = useMutation({
+    mutationFn: api.submitEmailCapture,
+    onSuccess: () => {
+      toast.success("Thanks for your interest! We'll be in touch soon.");
+      form.reset();
+    },
+    onError: (err) => {
+      const message =
+        err instanceof ApiError ? err.message : "Something went wrong. Please try again.";
+      toast.error(message);
+    },
+  });
 
   return (
     <section className="w-full pt-20 md:pt-60 lg:pt-60 pb-10 md:pb-20 px-5 relative flex flex-col justify-center items-center overflow-visible">
@@ -191,7 +200,7 @@ export function CTASection() {
 
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(onSubmit)}
+            onSubmit={form.handleSubmit((values) => mutation.mutate(values))}
             className="flex flex-col sm:flex-row gap-4 items-center w-full max-w-md"
           >
             <FormField
@@ -212,9 +221,10 @@ export function CTASection() {
             />
             <Button
               type="submit"
+              disabled={mutation.isPending}
               className="px-[30px] h-11 bg-secondary text-secondary-foreground text-base font-medium leading-6 rounded-md shadow-[0px_0px_0px_4px_rgba(255,255,255,0.13)] hover:bg-secondary/90 transition-all duration-200 w-full sm:w-auto"
             >
-              Start Automating
+              {mutation.isPending ? "Submitting…" : "Start Automating"}
             </Button>
           </form>
         </Form>
