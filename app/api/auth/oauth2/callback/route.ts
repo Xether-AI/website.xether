@@ -76,9 +76,14 @@ export async function GET(req: Request) {
       ? String((data as any).refresh_token)
       : null
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || '/'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || ''
   const next = url.searchParams.get('next')
-  const redirectTo = next ? new URL(next, appUrl).toString() : appUrl
+
+  let redirectTo: string = appUrl || '/'
+  if (next) {
+    const isAppUrlAbsolute = appUrl.startsWith('http://') || appUrl.startsWith('https://')
+    redirectTo = isAppUrlAbsolute ? new URL(next, appUrl).toString() : next.startsWith('/') ? next : '/'
+  }
 
   const res = NextResponse.redirect(redirectTo)
   const secure = process.env.NODE_ENV === 'production'
