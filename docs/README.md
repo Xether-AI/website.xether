@@ -56,6 +56,12 @@ Welcome to the Xether AI marketing website documentation.
   - Opt-out vs opt-in model
   - Better development experience
 
+- **[Design Updates](DESIGN_UPDATES.md)** - Sleek modern UI components
+  - Input, Button, Checkbox redesign
+  - Glass-morphism effects
+  - Smooth micro-interactions
+  - Application-wide consistency
+
 ## 📚 Additional Resources
 
 - **[Theme System](../THEME_SYSTEM.md)** - Dark/light mode implementation
