@@ -15,17 +15,7 @@
 - [x] Review current styling system
 - [x] Assess current content
 
-### 1.2 Content Strategy
-
-- [x] Define page structure based on Xether AI spec
-- [ ] Create content outline for each page
-- [ ] Write copy for hero section
-- [ ] Write copy for features section
-- [ ] Write copy for pricing section
-- [ ] Write FAQ content
-- [ ] Create call-to-action copy
-
-### 1.3 Design System Refinement
+### 1.2 Design System Refinement
 
 - [x] Ensure consistent color palette
 - [x] Define typography scale
@@ -136,7 +126,7 @@
 - [ ] Implement OAuth2 flow
 - [ ] Add email/password registration
 - [ ] Add form validation
-- [ ] Redirect to dashboard after signup
+- [ ] Redirect to external app after signup
 
 ### 5.2 Login Flow
 
@@ -145,12 +135,7 @@
 - [ ] Add email/password login
 - [ ] Implement "forgot password" flow
 - [ ] Add session management
-
-### 5.3 User Menu
-
-- [ ] Create user dropdown menu
-- [ ] Add logout functionality
-- [ ] Link to dashboard (external app)
+- [ ] Redirect to external app after login
 
 ## Phase 6: SEO & Performance
 
