@@ -82,11 +82,27 @@ The website follows these principles:
    ```bash
    npm install
    ```
-3. Run the development server:
+3. Configure environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Edit `.env.local` with your backend API URL and credentials.
+
+4. Run the development server:
    ```bash
    npm run dev
    ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+For detailed setup instructions, see [docs/SETUP.md](docs/SETUP.md).
+
+## Documentation
+
+- [Setup Guide](docs/SETUP.md) - Installation and configuration
+- [API Integration](docs/API_INTEGRATION.md) - Backend integration guide
+- [Theme System](THEME_SYSTEM.md) - Dark/light mode implementation
+- [Tasks](docs/TASKS.md) - Development progress tracker
+- [Contributing](CONTRIBUTING.md) - Contribution guidelines
 
 ## Deployment
 

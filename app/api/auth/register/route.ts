@@ -39,14 +39,12 @@ export async function POST(req: Request) {
   }
 
   const res = NextResponse.json({ ok: true })
-  const accessToken =
-    typeof data === 'object' && data && 'access_token' in (data as any)
-      ? String((data as any).access_token)
-      : null
-  const refreshToken =
-    typeof data === 'object' && data && 'refresh_token' in (data as any)
-      ? String((data as any).refresh_token)
-      : null
+  
+  type TokenResponse = { access_token?: string; refresh_token?: string }
+  const tokenData = data as TokenResponse | null
+  
+  const accessToken = tokenData?.access_token ? String(tokenData.access_token) : null
+  const refreshToken = tokenData?.refresh_token ? String(tokenData.refresh_token) : null
 
   const secure = process.env.NODE_ENV === 'production'
   if (accessToken) {
