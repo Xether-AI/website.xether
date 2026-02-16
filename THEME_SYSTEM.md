@@ -14,18 +14,25 @@ The website now supports both dark and light modes with automatic theme detectio
 
 ## How It Works
 
-### 1. Theme Provider (`components/ThemeProvider.tsx`)
-- Client-side React context for theme state
-- Detects system preference on mount
-- Reads/writes to localStorage
-- Applies theme class to `<html>` element
+### 1. Theme Provider (`components/theme-provider.tsx`)
+- Uses `next-themes` library for proper SSR/hydration
+- Wraps the app in `app/providers.tsx`
+- Handles system preference detection
+- Manages localStorage persistence
+- Prevents hydration mismatches
 
 ### 2. Theme Toggle (`components/ThemeToggle.tsx`)
+- Uses `useTheme` hook from `next-themes`
 - Sun/moon icon button
 - Toggles between light and dark modes
 - Located in the header navigation
 
-### 3. Tailwind Configuration (`tailwind.config.ts`)
+### 3. Root Layout (`app/layout.tsx`)
+```typescript
+<html lang="en" suppressHydrationWarning>
+  {/* suppressHydrationWarning prevents theme flash */}
+</html>
+```
 ```typescript
 {
   darkMode: "class", // Uses .dark class on html element
@@ -85,15 +92,17 @@ export function MyComponent() {
 ```tsx
 "use client";
 
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "next-themes";
 
 export function MyComponent() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   
   return (
     <div>
       <p>Current theme: {theme}</p>
-      <button onClick={toggleTheme}>Toggle</button>
+      <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        Toggle
+      </button>
     </div>
   );
 }
