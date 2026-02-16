@@ -11,6 +11,7 @@ import { api } from "@/lib/api/client"
 import { ApiError } from "@/lib/api/errors"
 import { OAuthButtons } from "@/components/auth/oauth-buttons"
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   Form,
   FormControl,
@@ -25,12 +26,13 @@ import { toast } from "sonner"
 const schema = z.object({
   email: z.string().email("Please enter a valid email."),
   password: z.string().min(8, "Password must be at least 8 characters."),
+  rememberMe : z.boolean()
 })
 
 export function LoginForm() {
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
-    defaultValues: { email: "", password: "" },
+    defaultValues: { email: "", password: "", rememberMe : false },
   })
 
   const mutation = useMutation({
@@ -87,6 +89,26 @@ export function LoginForm() {
                   <Input type="password" placeholder="********" autoComplete="current-password" {...field} />
                 </FormControl>
                 <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="rememberMe"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel className="text-sm font-normal cursor-pointer">
+                    Remember me for 30 days
+                  </FormLabel>
+                </div>
               </FormItem>
             )}
           />
