@@ -201,7 +201,7 @@ export function CTASection() {
                 <FormItem className="w-full">
                   <FormControl>
                     <Input
-                      placeholder="Enter your email"
+                      placeholder="Your email"
                       className="bg-background/50 backdrop-blur-sm border-white/10 h-11"
                       {...field}
                     />
