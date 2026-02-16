@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Home } from "lucide-react";
 
@@ -13,7 +12,7 @@ export default function NotFound() {
           Page not found
         </p>
         <p className="mb-10 text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <Button href="/" size="lg">
           <Home className="mr-2 h-4 w-4" />
