@@ -111,14 +111,23 @@
 - [x] Connect demo request form to backend API
 - [x] Add loading states
 - [x] Add success notifications (Sonner)
+- [x] Add error handling with ApiError class
 
-### 4.3 Dynamic Content (Optional)
+### 4.3 Authentication
 
-- [ ] Fetch blog posts from backend (if applicable)
-- [ ] Fetch case studies from backend (if applicable)
-- [ ] Implement content caching
+- [x] Implement logout endpoint
+- [x] Create logout hook
+- [x] Add session cookie management
+- [x] Document API integration patterns
 
-## Phase 5: Authentication Flow (Optional)
+### 4.4 Documentation
+
+- [x] Create .env.example file
+- [x] Document all environment variables
+- [x] Create API integration guide
+- [x] Document authentication flows
+
+## Phase 5: Authentication Flow
 
 ### 5.1 Sign Up Flow
 
@@ -127,6 +136,8 @@
 - [x] Add email/password registration
 - [x] Add form validation
 - [x] Redirect to external app after signup
+- [x] Add loading states
+- [x] Add error handling
 
 ### 5.2 Login Flow
 
@@ -136,6 +147,16 @@
 - [x] Implement "forgot password" flow
 - [x] Add session management
 - [x] Redirect to external app after login
+- [x] Add loading states
+- [x] Add error handling
+
+### 5.3 Session Management
+
+- [x] HTTP-only cookie implementation
+- [x] Access token storage
+- [x] Refresh token storage
+- [x] Logout functionality
+- [x] Session utilities (isAuthenticated, getAccessToken)
 
 ## Phase 6: SEO & Performance
 
