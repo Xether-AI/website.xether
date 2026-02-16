@@ -77,13 +77,14 @@ export function LoginForm() {
                   <FormLabel>Password</FormLabel>
                   <Link
                     href="/forgot-password"
+
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
-                    Forgot?
+                    Forgot Password?
                   </Link>
                 </div>
                 <FormControl>
-                  <Input type="password" autoComplete="current-password" {...field} />
+                  <Input type="password" placeholder="********" autoComplete="current-password" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
