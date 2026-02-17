@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { api } from "@/lib/api/client";
 import { ApiError } from "@/lib/api/errors";
+import { analytics } from "@/lib/analytics";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -35,11 +36,15 @@ export function CTASection() {
     mutationFn: api.submitEmailCapture,
     onSuccess: () => {
       toast.success("Thanks for your interest! We'll be in touch soon.");
+      analytics.trackFormSubmit("cta_email_capture", "success");
       form.reset();
     },
     onError: (err) => {
+      analytics.trackFormSubmit("cta_email_capture", "error");
       const message =
-        err instanceof ApiError ? err.message : "Something went wrong. Please try again.";
+        err instanceof ApiError
+          ? err.message
+          : "Something went wrong. Please try again.";
       toast.error(message);
     },
   });

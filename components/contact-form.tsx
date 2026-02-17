@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useMutation } from "@tanstack/react-query"
-import { Loader2 } from "lucide-react"
-import { useForm } from "react-hook-form"
-import * as z from "zod"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
+import { Loader2 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
-import { api } from "@/lib/api/client"
-import { ApiError } from "@/lib/api/errors"
-import { Button } from "@/components/ui/button"
+import { api } from "@/lib/api/client";
+import { ApiError } from "@/lib/api/errors";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -16,17 +16,18 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "sonner"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
+import { analytics } from "@/lib/analytics";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name."),
   email: z.string().email("Please enter a valid email."),
   company: z.string().optional(),
   message: z.string().min(10, "Tell us a bit more (at least 10 characters)."),
-})
+});
 
 export function ContactForm() {
   const form = useForm<z.infer<typeof schema>>({
@@ -37,19 +38,24 @@ export function ContactForm() {
       company: "",
       message: "",
     },
-  })
+  });
 
   const mutation = useMutation({
     mutationFn: api.submitContactForm,
     onSuccess: () => {
-      toast.success("Message sent. We’ll get back to you shortly.")
-      form.reset()
+      toast.success("Message sent. We’ll get back to you shortly.");
+      analytics.trackFormSubmit("contact_form", "success");
+      form.reset();
     },
     onError: (err) => {
-      const message = err instanceof ApiError ? err.message : "Something went wrong. Please try again."
-      toast.error(message)
+      analytics.trackFormSubmit("contact_form", "error");
+      const message =
+        err instanceof ApiError
+          ? err.message
+          : "Something went wrong. Please try again.";
+      toast.error(message);
     },
-  })
+  });
 
   return (
     <Form {...form}>
@@ -65,7 +71,11 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Jane Doe" autoComplete="name" {...field} />
+                  <Input
+                    placeholder="Jane Doe"
+                    autoComplete="name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -78,7 +88,11 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="jane@company.com" autoComplete="email" {...field} />
+                  <Input
+                    placeholder="jane@company.com"
+                    autoComplete="email"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -93,7 +107,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Company (optional)</FormLabel>
               <FormControl>
-                <Input placeholder="Acme Inc." autoComplete="organization" {...field} />
+                <Input
+                  placeholder="Acme Inc."
+                  autoComplete="organization"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -107,7 +125,10 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>How can we help?</FormLabel>
               <FormControl>
-                <Textarea placeholder="What are you trying to build, and what data problems are you facing?" {...field} />
+                <Textarea
+                  placeholder="What are you trying to build, and what data problems are you facing?"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -126,6 +147,5 @@ export function ContactForm() {
         </Button>
       </form>
     </Form>
-  )
+  );
 }
-
