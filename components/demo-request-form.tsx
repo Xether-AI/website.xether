@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useMutation } from "@tanstack/react-query"
-import { Loader2 } from "lucide-react"
-import { useForm } from "react-hook-form"
-import * as z from "zod"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
+import { Loader2 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
-import { api } from "@/lib/api/client"
-import { ApiError } from "@/lib/api/errors"
-import { Button } from "@/components/ui/button"
+import { api } from "@/lib/api/client";
+import { ApiError } from "@/lib/api/errors";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -16,10 +16,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "sonner"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
+import { analytics } from "@/lib/analytics";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name."),
@@ -28,7 +29,7 @@ const schema = z.object({
   role: z.string().optional(),
   teamSize: z.string().optional(),
   notes: z.string().optional(),
-})
+});
 
 export function DemoRequestForm() {
   const form = useForm<z.infer<typeof schema>>({
@@ -41,19 +42,24 @@ export function DemoRequestForm() {
       teamSize: "",
       notes: "",
     },
-  })
+  });
 
   const mutation = useMutation({
     mutationFn: api.submitDemoRequest,
     onSuccess: () => {
-      toast.success("Demo request received. We’ll reach out soon.")
-      form.reset()
+      toast.success("Demo request received. We’ll reach out soon.");
+      analytics.trackFormSubmit("demo_request", "success");
+      form.reset();
     },
     onError: (err) => {
-      const message = err instanceof ApiError ? err.message : "Something went wrong. Please try again."
-      toast.error(message)
+      analytics.trackFormSubmit("demo_request", "error");
+      const message =
+        err instanceof ApiError
+          ? err.message
+          : "Something went wrong. Please try again.";
+      toast.error(message);
     },
-  })
+  });
 
   return (
     <Form {...form}>
@@ -69,7 +75,11 @@ export function DemoRequestForm() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Jane Doe" autoComplete="name" {...field} />
+                  <Input
+                    placeholder="Jane Doe"
+                    autoComplete="name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -82,7 +92,11 @@ export function DemoRequestForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="jane@company.com" autoComplete="email" {...field} />
+                  <Input
+                    placeholder="jane@company.com"
+                    autoComplete="email"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -98,7 +112,11 @@ export function DemoRequestForm() {
               <FormItem>
                 <FormLabel>Company (optional)</FormLabel>
                 <FormControl>
-                  <Input placeholder="Acme Inc." autoComplete="organization" {...field} />
+                  <Input
+                    placeholder="Acme Inc."
+                    autoComplete="organization"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -111,7 +129,11 @@ export function DemoRequestForm() {
               <FormItem>
                 <FormLabel>Role (optional)</FormLabel>
                 <FormControl>
-                  <Input placeholder="ML Engineer" autoComplete="organization-title" {...field} />
+                  <Input
+                    placeholder="ML Engineer"
+                    autoComplete="organization-title"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -140,7 +162,10 @@ export function DemoRequestForm() {
             <FormItem>
               <FormLabel>Anything else? (optional)</FormLabel>
               <FormControl>
-                <Textarea placeholder="What data sources, scale, compliance needs, timeline…" {...field} />
+                <Textarea
+                  placeholder="What data sources, scale, compliance needs, timeline…"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -159,6 +184,5 @@ export function DemoRequestForm() {
         </Button>
       </form>
     </Form>
-  )
+  );
 }
-
