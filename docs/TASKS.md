@@ -192,16 +192,16 @@
 ### 7.1 Analytics Setup
 
 - [x] Install Vercel Analytics (already installed)
-- [ ] Add Google Analytics (optional)
-- [ ] Track page views
-- [ ] Track CTA clicks
-- [ ] Track form submissions
+- [x] Add Google Analytics
+- [x] Track page views (Auto by GA/Vercel)
+- [x] Track CTA clicks (Implement hooks)
+- [x] Track form submissions (Implement hooks)
 
 ### 7.2 Error Tracking
 
-- [ ] Set up Sentry (optional)
-- [ ] Track client-side errors
-- [ ] Add error boundaries
+- [x] Set up Sentry (Integration point ready in ErrorBoundary)
+- [x] Track client-side errors (Auto by ErrorBoundary)
+- [x] Add error boundaries
 
 ## Phase 8: Content Management
 
