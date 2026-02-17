@@ -1,33 +1,56 @@
-import Link from "next/link"
-import { redirect } from "next/navigation"
+import Link from "next/link";
+import { redirect } from "next/navigation";
 
-import { SignupForm } from "@/components/auth/signup-form"
-import { isAuthenticated } from "@/lib/server/session"
-import { ArrowLeft } from "lucide-react"
+import { SignupForm } from "@/components/auth/signup-form";
+import { isAuthenticated } from "@/lib/server/session";
+import { ArrowLeft } from "lucide-react";
+import { AuthBackground } from "@/components/auth/auth-background";
+import { AuthHeroObject } from "@/components/auth/auth-hero-object";
 
 export default async function SignupPage() {
   if (await isAuthenticated()) {
-    redirect(process.env.NEXT_PUBLIC_APP_URL || "/")
+    redirect(process.env.NEXT_PUBLIC_APP_URL || "/");
   }
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="max-w-md mx-auto px-6 py-16">
-        <Link href="/" className="text-sm text-muted-foreground hover:text-foreground flex flex-row">
-          <div className="flex flex-row justify-between items-center border rounded-sm px-4 p-2">
-            <ArrowLeft />
+    <AuthBackground>
+      <div className="max-w-md w-full mx-auto px-6 py-12 flex flex-col items-center">
+        <Link
+          href="/"
+          className="self-start text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+        >
+          <div className="flex items-center gap-2 border border-border/50 rounded-lg px-3 py-1.5 bg-background/50 backdrop-blur-sm">
+            <ArrowLeft className="h-4 w-4" />
             Back to home
           </div>
         </Link>
-        <h1 className="mt-4 text-3xl font-semibold text-foreground">Create your account</h1>
-        <p className="mt-2 text-muted-foreground">
-          Start using Xether. You’ll be redirected to the app after signup.
-        </p>
-        <div className="mt-8">
+
+        <AuthHeroObject />
+
+        <div className="w-full space-y-2 text-center mb-8">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+            Create your account
+          </h1>
+          <p className="text-muted-foreground">
+            Start using Xether. You&apos;ll be redirected to the app after
+            signup.
+          </p>
+        </div>
+
+        <div className="w-full bg-card/50 backdrop-blur-xl border border-border/50 p-8 rounded-2xl shadow-2xl ring-1 ring-white/5">
           <SignupForm />
         </div>
-      </div>
-    </main>
-  )
-}
 
+        <p className="mt-8 text-sm text-muted-foreground text-center">
+          Already have an account?{" "}
+          <Link
+            href="/login"
+            className="text-primary hover:underline font-medium"
+          >
+            Sign in
+          </Link>
+        </p>
+      </div>
+    </AuthBackground>
+  );
+}
