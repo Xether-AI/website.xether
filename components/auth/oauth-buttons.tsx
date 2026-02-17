@@ -23,7 +23,7 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
           <Button
             asChild
             variant="outline"
-            className="w-full border-border/50 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+            className="w-full border-gray-700 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
           >
             <a
               href="/api/auth/oauth2/google"
@@ -56,7 +56,7 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
           <Button
             asChild
             variant="outline"
-            className="w-full border-border/50 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+            className="w-full border-gray-700 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
           >
             <a
               href="/api/auth/oauth2/github"
@@ -72,7 +72,7 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
           <Button
             asChild
             variant="outline"
-            className="w-full border-border/50 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+            className="w-full border-gray-700 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
           >
             <a
               href="/api/auth/oauth2/gitlab"
@@ -88,7 +88,7 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
         <Button
           asChild
           variant="outline"
-          className="w-full border-border/50 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+          className="w-full border-gray-700 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
         >
           <a href="/api/auth/oauth2/start">
             <Mail />
@@ -100,7 +100,7 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
       {showDivider && (
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t border-border/30" />
+            <span className="w-full border-t border-gray-700" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
             <span className="bg-[#0f1211] px-2 text-muted-foreground/60">
