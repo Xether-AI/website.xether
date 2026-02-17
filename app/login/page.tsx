@@ -4,8 +4,7 @@ import { redirect } from "next/navigation";
 import { LoginForm } from "@/components/auth/login-form";
 import { isAuthenticated } from "@/lib/server/session";
 import { ArrowLeft } from "lucide-react";
-import { AuthBackground } from "@/components/auth/auth-background";
-import { AuthHeroObject } from "@/components/auth/auth-hero-object";
+import { AuthSplitLayout } from "@/components/auth/auth-split-layout";
 
 export default async function LoginPage() {
   if (await isAuthenticated()) {
@@ -13,41 +12,41 @@ export default async function LoginPage() {
   }
 
   return (
-    <AuthBackground>
-      <div className="max-w-md w-full mx-auto px-6 py-12 flex flex-col items-center">
+    <AuthSplitLayout>
+      <div className="w-full max-w-md mx-auto flex flex-col items-center">
         <Link
           href="/"
-          className="self-start text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+          className="self-start text-sm text-muted-foreground hover:text-foreground transition-all mb-12 flex items-center gap-2 group"
         >
-          <div className="flex items-center gap-2 border border-border/50 rounded-lg px-3 py-1.5 bg-background/50 backdrop-blur-sm">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full border border-border/50 bg-background/50 group-hover:border-primary/50 transition-colors">
             <ArrowLeft className="h-4 w-4" />
-            Back to home
           </div>
+          Back to home
         </Link>
 
-        <AuthHeroObject />
-
-        <div className="w-full space-y-2 text-center mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+        <div className="w-full space-y-2 mb-10">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground">
             Sign In
           </h1>
-          <p className="text-muted-foreground">Welcome back to Xether AI</p>
+          <p className="text-muted-foreground text-lg">
+            Enter your details to access your account
+          </p>
         </div>
 
-        <div className="w-full bg-card/50 backdrop-blur-xl border border-border/50 p-8 rounded-2xl shadow-2xl ring-1 ring-white/5">
+        <div className="w-full">
           <LoginForm />
         </div>
 
-        <p className="mt-8 text-sm text-muted-foreground text-center">
+        <p className="mt-10 text-sm text-muted-foreground">
           Don&apos;t have an account?{" "}
           <Link
             href="/signup"
-            className="text-primary hover:underline font-medium"
+            className="text-primary hover:underline font-semibold"
           >
-            Create one
+            Create one for free
           </Link>
         </p>
       </div>
-    </AuthBackground>
+    </AuthSplitLayout>
   );
 }
