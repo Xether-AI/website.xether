@@ -1,20 +1,27 @@
 "use client";
 
-import { Button } from "@/components/Button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Upload, 
-  Sparkles, 
-  BarChart, 
-  Eye, 
-  FileText, 
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Upload,
+  Sparkles,
+  BarChart,
+  Eye,
+  FileText,
   Download,
   Database,
   Server,
   Cpu,
   Container,
   CheckCircle2,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 
 export default function FeaturesPage() {
@@ -26,10 +33,13 @@ export default function FeaturesPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
               Powerful Features for
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> Modern Teams</span>
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                {" "}
+                Modern Teams
+              </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Everything you need for data processing and document intelligence. 
+              Everything you need for data processing and document intelligence.
               Nothing you don&apos;t.
             </p>
           </div>
@@ -40,9 +50,12 @@ export default function FeaturesPage() {
       <section className="border-t border-border bg-card/50 px-6 py-24">
         <div className="container mx-auto max-w-screen-2xl">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold tracking-tight">Data Processing</h2>
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">
+              Data Processing
+            </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Transform raw data into actionable insights with automated workflows
+              Transform raw data into actionable insights with automated
+              workflows
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -53,7 +66,8 @@ export default function FeaturesPage() {
                 </div>
                 <CardTitle>Upload</CardTitle>
                 <CardDescription>
-                  Drag and drop CSV, XLSX, JSON, Parquet files. Up to 500MB. Instant validation.
+                  Drag and drop CSV, XLSX, JSON, Parquet files. Up to 500MB.
+                  Instant validation.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -64,7 +78,8 @@ export default function FeaturesPage() {
                 </div>
                 <CardTitle>Clean</CardTitle>
                 <CardDescription>
-                  Remove duplicates, handle missing values, detect outliers, normalize data.
+                  Remove duplicates, handle missing values, detect outliers,
+                  normalize data.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -75,7 +90,8 @@ export default function FeaturesPage() {
                 </div>
                 <CardTitle>Transform</CardTitle>
                 <CardDescription>
-                  Encode categories, convert types, standardize formats, apply custom rules.
+                  Encode categories, convert types, standardize formats, apply
+                  custom rules.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -86,7 +102,8 @@ export default function FeaturesPage() {
                 </div>
                 <CardTitle>Monitor</CardTitle>
                 <CardDescription>
-                  Real-time progress tracking. Job status updates. Error reporting.
+                  Real-time progress tracking. Job status updates. Error
+                  reporting.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -97,7 +114,8 @@ export default function FeaturesPage() {
                 </div>
                 <CardTitle>Report</CardTitle>
                 <CardDescription>
-                  Quality scores, statistics, transformation logs, before/after comparisons.
+                  Quality scores, statistics, transformation logs, before/after
+                  comparisons.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -108,7 +126,8 @@ export default function FeaturesPage() {
                 </div>
                 <CardTitle>Export</CardTitle>
                 <CardDescription>
-                  Download cleaned data. Multiple formats. Automatic RAG integration.
+                  Download cleaned data. Multiple formats. Automatic RAG
+                  integration.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -120,7 +139,9 @@ export default function FeaturesPage() {
       <section className="border-t border-border bg-background px-6 py-24">
         <div className="container mx-auto max-w-screen-2xl">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold tracking-tight">Document Search</h2>
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">
+              Document Search
+            </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               AI-powered semantic search with intelligent question answering
             </p>
@@ -210,7 +231,9 @@ export default function FeaturesPage() {
       <section className="border-t border-border bg-card/50 px-6 py-24">
         <div className="container mx-auto max-w-screen-2xl">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold tracking-tight">Enterprise Architecture</h2>
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">
+              Enterprise Architecture
+            </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Built on modern, scalable technologies
             </p>
@@ -300,15 +323,29 @@ export default function FeaturesPage() {
               Ready to Get Started?
             </h2>
             <p className="mb-10 text-xl text-muted-foreground">
-              Experience the power of AI-driven data processing and document intelligence.
+              Experience the power of AI-driven data processing and document
+              intelligence.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="http://localhost:5173" size="lg" className="w-full sm:w-auto">
-                Launch App
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button size="lg" className="w-full sm:w-auto" asChild>
+                <Link href="http://localhost:5173">
+                  Launch App
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
-              <Button href="https://docs.xetherai.com" variant="outline" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-                View Documentation
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto"
+                asChild
+              >
+                <a
+                  href="https://docs.xetherai.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Documentation
+                </a>
               </Button>
             </div>
           </div>

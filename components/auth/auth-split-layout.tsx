@@ -15,7 +15,7 @@ export function AuthSplitLayout({ children }: { children: React.ReactNode }) {
       {/* Right Panel: Content/Form */}
       <div className="flex-1 flex flex-col relative h-full overflow-y-auto overflow-x-hidden">
         {/* Subtle background decoration for the form side */}
-        <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none">
+        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <rect width="100%" height="100%" fill="url(#split-auth-grid)" />
           </svg>
