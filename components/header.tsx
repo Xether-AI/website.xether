@@ -1,28 +1,37 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
-import Link from "next/link" // Import Link for client-side navigation
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import Link from "next/link"; // Import Link for client-side navigation
 
 export function Header() {
   const navItems = [
     { name: "Features", href: "#features-section" },
     { name: "Pricing", href: "#pricing-section" },
     { name: "Testimonials", href: "#testimonials-section" },
-    { name : "Docs", href : "/docs" }
-  ]
+    { name: "Docs", href: "/docs" },
+  ];
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    const targetId = href.substring(1) // Remove '#' from href
-    const targetElement = document.getElementById(targetId)
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    const targetId = href.substring(1); // Remove '#' from href
+    const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" })
+      targetElement.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <header className="w-full py-4 px-6">
@@ -33,13 +42,17 @@ export function Header() {
               <span className="text-xl font-bold">Xether AI</span>
             </span>
           </div>
-          <nav className="hidden md:flex items-center gap-2 font-sans">
+          <nav
+            className="hidden md:flex items-center gap-2 font-sans"
+            aria-label="Main navigation"
+          >
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleScroll(e, item.href)} // Add onClick handler
                 className="text-[#888888] hover:text-foreground px-4 py-2 rounded-full font-medium transition-colors"
+                aria-label={`Go to ${item.name}`}
               >
                 {item.name}
               </Link>
@@ -47,7 +60,12 @@ export function Header() {
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <Link href="https://vercel.com/home" target="_blank" rel="noopener noreferrer" className="hidden md:block">
+          <Link
+            href="https://vercel.com/home"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:block"
+          >
             <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-2 rounded-full font-medium shadow-sm">
               Try for Free
             </Button>
@@ -59,9 +77,14 @@ export function Header() {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="bottom" className="bg-background border-t border-border text-foreground">
+            <SheetContent
+              side="bottom"
+              className="bg-background border-t border-border text-foreground"
+            >
               <SheetHeader>
-                <SheetTitle className="text-left text-xl font-semibold text-foreground">Navigation</SheetTitle>
+                <SheetTitle className="text-left text-xl font-semibold text-foreground">
+                  Navigation
+                </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-4 mt-6">
                 {navItems.map((item) => (
@@ -74,7 +97,12 @@ export function Header() {
                     {item.name}
                   </Link>
                 ))}
-                <Link href="https://vercel.com/home" target="_blank" rel="noopener noreferrer" className="w-full mt-4">
+                <Link
+                  href="https://vercel.com/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full mt-4"
+                >
                   <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-2 rounded-full font-medium shadow-sm">
                     Try for Free
                   </Button>
@@ -85,5 +113,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
