@@ -1,37 +1,68 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
-import { Providers } from './providers'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: 'Xether AI - Data Infrastructure for AI',
-  description: 'Automate data preparation, management, and improvement.',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://xether.ai"),
+  title: {
+    default: "Xether AI - Data Infrastructure for AI",
+    template: "%s | Xether AI",
+  },
+  description:
+    "Automate data preparation, management, and improvement with Xether AI.",
+  keywords: ["AI", "Data Infrastructure", "Data Prep", "MLOps", "Xether AI"],
+  authors: [{ name: "Xether AI Team" }],
+  creator: "Xether AI",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://xether.ai",
+    title: "Xether AI - Data Infrastructure for AI",
+    description: "Automate data preparation, management, and improvement.",
+    siteName: "Xether AI",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Xether AI - Data Infrastructure for AI",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Xether AI - Data Infrastructure for AI",
+    description: "Automate data preparation, management, and improvement.",
+    images: ["/og-image.png"],
+    creator: "@xetherai",
+  },
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
       },
       {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: "/icon.svg",
+        type: "image/svg+xml",
       },
     ],
-    apple: '/apple-icon.png',
+    apple: "/apple-icon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -40,5 +71,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
