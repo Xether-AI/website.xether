@@ -21,7 +21,7 @@ export default async function LoginPage() {
           <div className="flex items-center justify-center w-8 h-8 rounded-full border border-border/50 bg-background/50 group-hover:border-primary/50 transition-colors">
             <ArrowLeft className="h-4 w-4" />
           </div>
-          Back to home
+          Back to Home
         </Link>
 
         <div className="w-full space-y-2 mb-10">
