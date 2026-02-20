@@ -7,7 +7,7 @@ type AnalyticsEvent =
 
 // Define window with gtag for type safety
 interface WindowWithGtag extends Window {
-    gtag?: (command: string, eventName: string, eventParams?: Record<string, any>) => void;
+    gtag?: (command: string, eventName: string, eventParams?: Record<string, unknown>) => void;
 }
 
 /**

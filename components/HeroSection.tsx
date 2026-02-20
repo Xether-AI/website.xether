@@ -1,6 +1,6 @@
 import React from "react"
 import { Button } from "@/components/ui/button"
-import { Header } from "./header"
+import { Header } from "./Header"
 import Link from "next/link"
 
 export function HeroSection() {

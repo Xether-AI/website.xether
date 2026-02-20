@@ -1,7 +1,14 @@
 "use client";
 
-import { Button } from "@/components/Button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Code2, Key, Server, ArrowRight, ExternalLink } from "lucide-react";
 
 export default function APIPage() {
@@ -17,7 +24,7 @@ export default function APIPage() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              RESTful APIs for data processing and document intelligence. 
+              RESTful APIs for data processing and document intelligence.
               OpenAPI documentation included.
             </p>
           </div>
@@ -43,7 +50,9 @@ export default function APIPage() {
                     </div>
                     <div>
                       <CardTitle>AI Backend</CardTitle>
-                      <span className="text-xs text-muted-foreground">Port 8000</span>
+                      <span className="text-xs text-muted-foreground">
+                        Port 8000
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -70,15 +79,15 @@ export default function APIPage() {
                     <code className="text-sm font-mono">/api/v1/reports</code>
                   </div>
                 </div>
-                <Button 
-                  href="http://localhost:8000/docs" 
-                  variant="outline" 
-                  className="w-full"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Documentation
-                  <ExternalLink className="ml-2 h-4 w-4" />
+                <Button variant="outline" className="w-full" asChild>
+                  <a
+                    href="http://localhost:8000/docs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Documentation
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -92,7 +101,9 @@ export default function APIPage() {
                     </div>
                     <div>
                       <CardTitle>RAG Service</CardTitle>
-                      <span className="text-xs text-muted-foreground">Port 8001</span>
+                      <span className="text-xs text-muted-foreground">
+                        Port 8001
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -112,22 +123,26 @@ export default function APIPage() {
                   </div>
                   <div className="flex items-center gap-2 rounded-md bg-muted p-2">
                     <Code2 className="h-4 w-4 text-muted-foreground" />
-                    <code className="text-sm font-mono">/api/v1/collections</code>
+                    <code className="text-sm font-mono">
+                      /api/v1/collections
+                    </code>
                   </div>
                   <div className="flex items-center gap-2 rounded-md bg-muted p-2">
                     <Code2 className="h-4 w-4 text-muted-foreground" />
-                    <code className="text-sm font-mono">/api/v1/embeddings</code>
+                    <code className="text-sm font-mono">
+                      /api/v1/embeddings
+                    </code>
                   </div>
                 </div>
-                <Button 
-                  href="http://localhost:8001/docs" 
-                  variant="outline" 
-                  className="w-full"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Documentation
-                  <ExternalLink className="ml-2 h-4 w-4" />
+                <Button variant="outline" className="w-full" asChild>
+                  <a
+                    href="http://localhost:8001/docs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Documentation
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -142,7 +157,9 @@ export default function APIPage() {
             <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
               <Key className="h-8 w-8" />
             </div>
-            <h2 className="mb-4 text-4xl font-bold tracking-tight">Authentication</h2>
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">
+              Authentication
+            </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               JWT-based authentication. Include token in Authorization header.
             </p>
@@ -155,7 +172,7 @@ export default function APIPage() {
               </CardHeader>
               <CardContent>
                 <pre className="overflow-x-auto rounded-lg bg-muted p-6 text-sm">
-{`POST /api/v1/auth/login
+                  {`POST /api/v1/auth/login
 Content-Type: application/json
 
 {
@@ -173,7 +190,7 @@ Response:
                   Use the access token in subsequent requests:
                 </p>
                 <pre className="mt-2 overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-{`Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`}
+                  {`Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`}
                 </pre>
               </CardContent>
             </Card>
@@ -185,7 +202,9 @@ Response:
       <section className="border-t border-border bg-card/50 px-6 py-24">
         <div className="container mx-auto max-w-screen-2xl">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold tracking-tight">Common Endpoints</h2>
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">
+              Common Endpoints
+            </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Essential API endpoints for data processing and document search
             </p>
@@ -197,7 +216,7 @@ Response:
               </CardHeader>
               <CardContent>
                 <pre className="overflow-x-auto rounded-lg bg-muted p-6 text-sm">
-{`POST /api/v1/datasets/upload
+                  {`POST /api/v1/datasets/upload
 Content-Type: multipart/form-data
 Authorization: Bearer <token>
 
@@ -219,7 +238,7 @@ Response:
               </CardHeader>
               <CardContent>
                 <pre className="overflow-x-auto rounded-lg bg-muted p-6 text-sm">
-{`POST /api/v1/pipelines/execute
+                  {`POST /api/v1/pipelines/execute
 Content-Type: application/json
 Authorization: Bearer <token>
 
@@ -242,7 +261,7 @@ Response:
               </CardHeader>
               <CardContent>
                 <pre className="overflow-x-auto rounded-lg bg-muted p-6 text-sm">
-{`POST /api/v1/queries
+                  {`POST /api/v1/queries
 Content-Type: application/json
 Authorization: Bearer <token>
 
@@ -280,13 +299,26 @@ Response:
               Start building with our comprehensive API documentation.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="http://localhost:8000/docs" size="lg" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-                View API Docs
-                <ExternalLink className="ml-2 h-4 w-4" />
+              <Button size="lg" className="w-full sm:w-auto" asChild>
+                <a
+                  href="http://localhost:8000/docs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View API Docs
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
               </Button>
-              <Button href="http://localhost:5173" variant="outline" size="lg" className="w-full sm:w-auto">
-                Launch App
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto"
+                asChild
+              >
+                <Link href="http://localhost:5173">
+                  Launch App
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>

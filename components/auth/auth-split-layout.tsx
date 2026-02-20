@@ -8,19 +8,33 @@ export function AuthSplitLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen lg:h-screen w-full bg-background flex flex-col lg:flex-row lg:overflow-hidden">
       {/* Left Panel: Visual (Hidden on mobile) */}
-      <div className="hidden lg:flex lg:w-1/2 h-full relative bg-muted/20 items-center justify-center border-r border-border/50 overflow-hidden">
+      {/* Decorative background grid */}
+      <div className="absolute opacity-[0.05] inset-5 pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="split-auth-grid"
+              width="60"
+              height="60"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 60 0 L 0 0 0 60"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#split-auth-grid)" />
+        </svg>
+      </div>
+      <div className="hidden lg:flex lg:w-1/2 h-full relative items-center justify-center border-r border-background overflow-hidden">
         <AuthVisualHero />
       </div>
 
       {/* Right Panel: Content/Form */}
       <div className="flex-1 flex flex-col relative h-full overflow-y-auto overflow-x-hidden">
-        {/* Subtle background decoration for the form side */}
-        <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <rect width="100%" height="100%" fill="url(#split-auth-grid)" />
-          </svg>
-        </div>
-
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}

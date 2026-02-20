@@ -1,24 +1,34 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Github, Gitlab, Mail } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Github, Gitlab, Mail } from "lucide-react";
 
 interface OAuthButtonsProps {
-  showDivider?: boolean
+  showDivider?: boolean;
 }
 
 export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
   // Check if providers are explicitly disabled (default is enabled for better UX)
-  const googleEnabled = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED !== 'false'
-  const githubEnabled = process.env.NEXT_PUBLIC_GITHUB_OAUTH_ENABLED !== 'false'
-  const gitlabEnabled = process.env.NEXT_PUBLIC_GITLAB_OAUTH_ENABLED !== 'false'
+  const googleEnabled =
+    process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED !== "false";
+  const githubEnabled =
+    process.env.NEXT_PUBLIC_GITHUB_OAUTH_ENABLED !== "false";
+  const gitlabEnabled =
+    process.env.NEXT_PUBLIC_GITLAB_OAUTH_ENABLED !== "false";
 
   return (
     <>
       <div className="space-y-3">
         {googleEnabled && (
-          <Button asChild variant="outline" className="w-full border-gray-700">
-            <a href="/api/auth/oauth2/google" className="flex items-center justify-center gap-2">
+          <Button
+            asChild
+            variant="outline"
+            className="w-full border-gray-700 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+          >
+            <a
+              href="/api/auth/oauth2/google"
+              className="flex items-center justify-center gap-2"
+            >
               <svg className="h-5 w-5" viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
@@ -43,8 +53,15 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
         )}
 
         {githubEnabled && (
-          <Button asChild variant="outline" className="w-full border-gray-700">
-            <a href="/api/auth/oauth2/github" className="flex items-center justify-center gap-2">
+          <Button
+            asChild
+            variant="outline"
+            className="w-full border-gray-700 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+          >
+            <a
+              href="/api/auth/oauth2/github"
+              className="flex items-center justify-center gap-2"
+            >
               <Github />
               Continue with GitHub
             </a>
@@ -52,8 +69,15 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
         )}
 
         {gitlabEnabled && (
-          <Button asChild variant="outline" className="w-full border-gray-700">
-            <a href="/api/auth/oauth2/gitlab" className="flex items-center justify-center gap-2">
+          <Button
+            asChild
+            variant="outline"
+            className="w-full border-gray-700 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+          >
+            <a
+              href="/api/auth/oauth2/gitlab"
+              className="flex items-center justify-center gap-2"
+            >
               <Gitlab />
               Continue with GitLab
             </a>
@@ -61,9 +85,13 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
         )}
 
         {/* Generic SSO option - always shown */}
-        <Button asChild variant="outline" className="w-full border-gray-700">
+        <Button
+          asChild
+          variant="outline"
+          className="w-full border-gray-700 hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+        >
           <a href="/api/auth/oauth2/start">
-            <Mail/>
+            <Mail />
             Continue with Enterprise SSO
           </a>
         </Button>
@@ -72,13 +100,15 @@ export function OAuthButtons({ showDivider = true }: OAuthButtonsProps) {
       {showDivider && (
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t border-border" />
+            <span className="w-full border-t border-gray-700" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">or</span>
+            <span className="bg-[#0f1211] px-2 text-muted-foreground/60">
+              or
+            </span>
           </div>
         </div>
       )}
     </>
-  )
+  );
 }
