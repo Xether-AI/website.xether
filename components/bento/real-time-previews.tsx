@@ -79,14 +79,14 @@ const RealtimeCodingPreviews: React.FC = () => {
             }}
           >
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>{"{"}</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> "dataset": "churn_prediction",</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> "version": "v2.2.0",</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> "schema": {"{"}</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   "user_id": "string",</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   "churn_prob": "float",</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   "last_active": "timestamp"</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> &quot;dataset&quot;: &quot;churn_prediction&quot;,</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> &quot;version&quot;: &quot;v2.2.0&quot;,</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> &quot;schema&quot;: {"{"}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   &quot;user_id&quot;: &quot;string&quot;,</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   &quot;churn_prob&quot;: &quot;float&quot;,</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>   &quot;last_active&quot;: &quot;timestamp&quot;</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> {"},"}</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> "row_count": 45000</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}> &quot;row_count&quot;: 45000</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400, display: "block" }}>{"}"}</p>
           </div>
         </div>
