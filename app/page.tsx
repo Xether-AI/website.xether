@@ -18,8 +18,8 @@ export default function LandingPage() {
     url: "https://xether.ai",
     logo: "https://xether.ai/icon.svg",
     description:
-      "Data Infrastructure for AI. Automate data preparation, management, and improvement.",
-    sameAs: ["https://twitter.com/xetherai", "https://github.com/xetherai"],
+      "Data Infrastructure for AI/ML. Automate data preparation, management, and improvement.",
+    sameAs: ["https://x.com/xetherai", "https://github.com/Xether-AI"],
   };
 
   return (
