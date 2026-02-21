@@ -125,13 +125,6 @@ export function SignupForm() {
           </Button>
         </form>
       </Form>
-
-      <p className="text-sm text-muted-foreground">
-        Already have an account?{" "}
-        <Link href="/login" className="text-foreground hover:underline">
-          Sign in
-        </Link>
-      </p>
     </div>
   )
 }

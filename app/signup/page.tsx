@@ -29,7 +29,7 @@ export default async function SignupPage() {
             Create your account
           </h1>
           <p className="text-muted-foreground text-lg">
-            Start using Xether. You&apos;ll be redirected to the app after
+            Start using <span className="text-primary">Xether AI</span>. You&apos;ll be redirected to the app after
             signup.
           </p>
         </div>

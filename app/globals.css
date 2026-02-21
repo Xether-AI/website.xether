@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Themeable Colors - Restored to Original Vibe */
-    --background: 210 11% 7%; /* #0f1211 */
+    --background: oklch(11.37% 0.03829 283.277);
     --foreground: 160 14% 93%; /* #e7eceb */
 
     --muted: 240 2% 16%; /* #27272a */
