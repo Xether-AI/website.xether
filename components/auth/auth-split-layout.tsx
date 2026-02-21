@@ -45,9 +45,9 @@ export function AuthSplitLayout({ children }: { children: React.ReactNode }) {
         </motion.div>
 
         {/* Footer info or legal links could go here */}
-        <div className="p-8 text-center sm:text-left">
+        <div className="p-8 text-center sm:text-left flex items-center justify-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Xether AI. All rights reserved.
+            &copy; {new Date().getFullYear()} <span className="text-primary">Xether AI</span>. All rights reserved.
           </p>
         </div>
       </div>
